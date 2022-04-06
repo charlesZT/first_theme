@@ -1,5 +1,14 @@
 {{ 'custom-langing-page.css' | asset_url | stylesheet_tag }}
 
+{% if template == 'index' %}
+{% include 'header' %}
+{% elsif page.handle == 'talent' %}
+{% include 'header-talent' %}
+{% else %}
+
+{% include 'header-for-other-pages' %}
+{% endif %}
+
 <div class="custom-landing-page page-width">
   <div class="monitor_fill_container">
     <div class="photo">photo here</div>
