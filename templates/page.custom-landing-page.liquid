@@ -1,9 +1,30 @@
 {{ 'custom-langing-page.css' | asset_url | stylesheet_tag }}
 
 <div class="custom-landing-page page-width">
-  <div class="monitor_fill_container">photo with short content</div>
-  <div class="monitor_fill_container">video overview</div>
-  <div class="monitor_fill_container">case studies or industries or customer logos</div>
-  <div class="monitor_fill_container">product filters and product list</div>
-  <div class="monitor_fill_container">contact form</div>
+  <div class="monitor_fill_container">
+    <div class="photo">photo here</div>
+    <div class="photo_desc">
+      <span>photo details</span>
+    </div>
+  </div>
+  <div class="monitor_fill_container">
+    <div class="video_player">
+      <iframe src="https://www.youtube.com/embed/p4mHOllDqBg?enablejsapi=1" class="js-youtube" allow="autoplay; encrypted-media" allowfullscreen="" title=""></iframe>
+    </div>
+  </div>
+  <div class="monitor_fill_container">
+    <div class="case_studies">case studies or industries or customer logos</div>
+  </div>
+  <div class="monitor_fill_container">
+    <div class="product_list">
+      {% for collection in product.collections %}
+        {{ collection.title }}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="monitor_fill_container flex">
+    <div class="not_find">Can't find what you are looking for?</div>
+    <div class="contact_form">contact form</div>
+  </div>
 </div>
+
