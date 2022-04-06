@@ -1,13 +1,13 @@
 {{ 'custom-langing-page.css' | asset_url | stylesheet_tag }}
 
-{% if template == 'index' %}
+{% comment %} {% if template == 'index' %}
 {% include 'header' %}
 {% elsif page.handle == 'talent' %}
 {% include 'header-talent' %}
 {% else %}
 
 {% include 'header-for-other-pages' %}
-{% endif %}
+{% endif %} {% endcomment %}
 
 <div class="custom-landing-page page-width">
   <div class="monitor_fill_container">
