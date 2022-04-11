@@ -2127,6 +2127,7 @@ input[type='checkbox'] {
 /* section-announcement-bar */
 #shopify-section-announcement-bar {
   z-index: 4;
+  display: flex;
 }
 
 .announcement-bar {
@@ -2715,6 +2716,7 @@ details-disclosure > details {
   background: rgb(var(--color-background));
   background: var(--gradient-background);
   background-attachment: fixed;
+  flex-grow: 1;
 }
 
 @media screen and (forced-colors: active) {
