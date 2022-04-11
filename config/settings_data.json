@@ -103,14 +103,32 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "Welcome to our store",
+              "text": "American Made Since 1957",
+              "color_scheme": "background-1",
+              "link": ""
+            }
+          },
+          "6b943579-1a12-4143-b261-b2c4c7febffb": {
+            "type": "announcement",
+            "settings": {
+              "text": "(855) 289-1874",
+              "color_scheme": "background-1",
+              "link": ""
+            }
+          },
+          "056c68e6-e1a3-4fa5-b730-0eecfa89bc02": {
+            "type": "announcement",
+            "settings": {
+              "text": "ISO 9001 \/ IATF 16949",
               "color_scheme": "background-1",
               "link": ""
             }
           }
         },
         "block_order": [
-          "announcement-bar-0"
+          "announcement-bar-0",
+          "6b943579-1a12-4143-b261-b2c4c7febffb",
+          "056c68e6-e1a3-4fa5-b730-0eecfa89bc02"
         ],
         "settings": {
         }
