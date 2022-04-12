@@ -1,9 +1,434 @@
 
-      {%- if section.settings.page.content != blank -%}
-        {{ section.settings.page.content }}
-      {%- else -%}
-        <div class='page-placeholder-wrapper placeholder'>
-          {{ 'page' | placeholder_svg_tag: 'page-placeholder' }}
-        </div>
-      {%- endif -%}
-      
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://kit.fontawesome.com/f440c13f38.js" crossorigin="anonymous" defer></script>
+
+<style>
+
+  .wrap {
+    background-color: #f8f8f8;
+    margin: 0;
+    margin-bottom: 15em;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+  }
+
+  a:visited {
+    color: inherit;
+  }
+
+  div.product-info {
+    margin: 8em auto;
+    width: 90%;
+    margin-bottom: 10em;
+  }
+
+  div#jacket_name div,
+  div#shielding_name div,
+  div#closure_name div,
+  div#shape_name div {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin: 1em;
+    width: 14em;
+    height: 14em;
+    display: inline-flex;
+    cursor: pointer;
+    border-radius: 10px;
+    background-position: inherit;
+    background-size: cover;
+  }
+
+  div#jacket_name div:hover,
+  div#shielding_name div:hover {
+    background: #ccc;
+  }
+
+  div.product-info div span {
+    padding: 0.8em;
+    background-color: #e2e2e2;
+    height: fit-content;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .selected {
+    box-shadow: 4px 4px 8px 4px;
+  }
+
+  .shield,
+  .closure,
+  .shape {
+    display: none;
+  }
+
+  .selected_product {
+    text-align: center;
+    background-color: #e8e8e8;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    z-index: 999;
+  }
+
+  .selected_product .left {
+    flex-grow: 1;
+    font-size: 4em;
+    color: #005cb9;
+    width: 15%;
+  }
+
+  .selected_product .title {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+  }
+
+  .selected_product .right {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+  }
+
+  .selected_product .right.reset {
+    cursor: pointer;
+  }
+
+  #jacket_name,
+  #shielding_name {
+    position: relative;
+  }
+
+  .jacket .None:before,
+  .NoShielding:before {
+    content:  "\f05e";
+    font-family: FontAwesome;
+    position:absolute;
+    font-size: 7em;
+    opacity: 0.08;
+    padding: 4% 3%;
+  }
+
+
+  /* Modal styling ================== */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 10%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content ================== */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    min-height: 40%;
+    border-radius: 8px;
+  }
+
+  /* The Close Button ============== */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  @media only screen and (max-width: 1440px) {
+
+    div.product-info {
+      width: 95%;
+    }
+
+  }
+
+</style>
+
+<div class="wrap">
+
+  <div class="selected_product">
+    <div class="left"><a href="https://www.zippertubing.com/"><i class="fak fa-zt-zippertubing"></i></a></div>
+    <div class="title"></div>
+    <div class="right reset"><i class="fa-solid fa-rotate"></i>&nbsp;Reset Selections</div>
+  </div>
+  <div class="product-info">
+    <h1>Product Finder</h1>
+
+    <section class="jacket">
+      <h3>Exterior Material (Jacket Name)</h3>
+      <div name="jacket_name" id="jacket_name">
+        <div class="None" data-id="None" style="margin-right: 3px;"><span>None</span></div>
+      </div>
+    </section>
+    
+    <section class="shield">
+      <h3>Available Shield</h3>
+      <div name="shielding_name" id="shielding_name"></div>
+    </section>
+    
+    <section class="closure">
+      <h3>Available Closure</h3>
+      <div name="closure_name" id="closure_name"></div>
+    </section>
+    
+    <section class="shape">
+      <h3>Shape of Install</h3>
+      <div name="shape_name" id="shape_name"></div>
+    </section>
+    
+  </div>
+
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Popup display</p>
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+
+  const zt_json_url = "https://zippertubing.us/wp-content/uploads/json/product_finder_2.json";
+
+  // get jacket names
+  jQuery.getJSON(zt_json_url, function(data) {
+    let jacketName = [];
+    jQuery.each(data, function(key, value){
+      let JacketName_Class = value.JacketName.replace(/[{( )}]/g, '');
+      if (jacketName.indexOf(value.JacketName) < 0) {
+        jacketName.push(value.JacketName);
+        if (value.JacketName != "None") {
+          jQuery("#jacket_name").append("<div class='" + JacketName_Class + "' data-id='" + value.JacketName + "'><span><a href='https://www.zippertubing.com/materials/jacketing/coated-fabrics/srfg-32' target='_blank'>" + value.JacketName + "</a></span></div>");
+          jQuery("." + JacketName_Class).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + value.JacketName + '.jpg)');
+        }
+      }
+    });
+  });
+
+  // create onchange on select and call function to create options
+  window.addEventListener('load', function () {
+
+    let selected_jacketName     = "";
+    let selected_shieldingName  = "";
+    let selected_closureName    = "";
+
+    jQuery("#jacket_name").click(function(e) {
+      let target = e.target;
+      if (target.dataset.id) {
+        jQuery("#shielding_name div").remove();
+        jQuery("#jacket_name div").removeClass("selected");
+
+        getShieldResult(target.dataset.id);
+        selected_jacketName = target.dataset.id;
+        jQuery(target).addClass("selected");
+        jQuery(".shield").show("fast");
+        jQuery("html, body").animate({scrollTop: jQuery("section.shield").offset().top - 80},800);
+        topBreadCrumb(selected_jacketName, "jacket_breadcrumb");
+      }
+    });
+
+    jQuery("#shielding_name").click(function(e) {
+      let target = e.target;
+      if (target.dataset.id) {
+        jQuery("#closure_name div").remove();
+        jQuery(e.currentTarget.childNodes).removeClass("selected");
+
+        getClosureResult(target.dataset.id, selected_jacketName);
+        selected_shieldingName = target.dataset.id;
+        jQuery(target).addClass("selected");
+        jQuery(".closure").show("fast");
+        jQuery("html, body").animate({scrollTop: jQuery("section.closure").offset().top - 80},800);
+        topBreadCrumb(selected_shieldingName, "shielding_breadcrumb");
+      }
+    });
+
+    jQuery("#closure_name").click(function(e) {
+      let target = e.target;
+      if (target.dataset.id) {
+        jQuery("#shape_name div").remove();
+        jQuery(e.currentTarget.childNodes).removeClass("selected");
+
+        getShapeResult(target.dataset.id, selected_shieldingName, selected_jacketName);
+        selected_closureName = target.dataset.id;
+        jQuery(target).addClass("selected");
+        jQuery(".shape").show("fast");
+        jQuery("html, body").animate({scrollTop: jQuery("section.shape").offset().top - 80},800);
+        topBreadCrumb(selected_closureName, "closure_breadcrumb");
+      }
+    });
+
+    jQuery("#shape_name").click(function(e) {
+      if (e.target.dataset.id) {
+        modalPop(e.target.dataset.id);
+      }
+    });
+
+    jQuery(".reset").click(function() {
+      resetSelections();
+    });
+
+    // jQuery("#jacket_name div").mouseover(function(e) {
+    //   console.log(this);
+    //   jQuery(this).css("width", "1000px").css("height", "1000px").css("position", "absolute");
+    // });
+    // jQuery("#jacket_name div").mouseout(function(e) {
+    //   console.log(this);
+    //   jQuery(this).css("width", "15em").css("height", "15em").css("position", "unset");
+    // });
+
+  });
+
+  function getShieldResult(materialId) {
+    jQuery.getJSON(zt_json_url, function(data) {
+      // create function to get shield material and add option to select tag
+      let shieldName = [];
+      jQuery.each(data, function(key, value){
+        let ShieldingName_Class = value.ShieldingName.replace(/[{( )}]/g, '');
+        if (value.JacketName === materialId) {
+          if (shieldName.indexOf(value.ShieldingName) < 0) {
+            shieldName.push(value.ShieldingName);
+            jQuery("#shielding_name").append("<div class='" + ShieldingName_Class + "' data-id='" + value.ShieldingName + "'><span>" + value.ShieldingName + "</span></div>");
+            if (ShieldingName_Class !== "NoShielding") {
+              jQuery("." + ShieldingName_Class).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + ShieldingName_Class + '.jpg)');
+            }
+          }
+        }
+      });
+    });
+  }
+
+  function getClosureResult(materialId, selected_jacketName) {
+    jQuery.getJSON(zt_json_url, function(data) {
+      // create function to get closure and add option to select tag
+      let closureName = [];
+      jQuery.each(data, function(key, value) {
+        let ClosureName_Class = value.ClosureName.replace(/[{( )}]/g, '');
+        if (value.ShieldingName === materialId && value.JacketName === selected_jacketName) {
+          if (closureName.indexOf(value.ClosureName) < 0) {
+            closureName.push(value.ClosureName);
+            jQuery("#closure_name").append("<div class='" + ClosureName_Class + "' data-id='" + value.ClosureName + "'><span>" + value.ClosureName + "</span></div>");
+            jQuery("." + ClosureName_Class).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + ClosureName_Class + '.jpg)');
+          }
+        }
+      });
+    });
+  }
+
+  function getShapeResult(materialId, selected_closureName, selected_jacketName) {
+    jQuery.getJSON(zt_json_url, function(data) {
+      let shapeName = [];
+      let n = 0;
+      jQuery.each(data, function(key, value) {
+        let ShapeName_Class = value.ShapeName.replace(/[{( )}]/g, '');
+        if (value.ClosureName === materialId && value.ShieldingName === selected_closureName && value.JacketName === selected_jacketName) {
+          if (shapeName.indexOf(value.ShapeName) < 0) {
+            shapeName.push(value.ShapeName);
+            jQuery("#shape_name").append("<div id='modal_btn_" + n + "' class='" + ShapeName_Class + "' data-id='" + value.ShapeName + "'><span>" + value.ShapeName + "</span></div>");
+            jQuery("." + ShapeName_Class).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + ShapeName_Class + '.jpg)');
+          }
+          n++;
+        }
+      });
+    });
+  }
+
+  function topBreadCrumb(materialName, id) {
+    
+    let checkTitle = jQuery(".title").text().length;
+    let checkSubTitle = jQuery("span." + id).text().length;
+
+    if (id === "jacket_breadcrumb" && checkTitle > 0) {
+      jQuery(".title span").text(materialName);
+      jQuery(".title span:first").nextAll().remove();
+    }else if (id === "jacket_breadcrumb" && checkTitle == 0) {
+      jQuery(".title").html("Your Selections: <span class='" + id + "'>" + materialName + "</span>");
+    }else if (id !== "jacket_breadcrumb" && checkSubTitle > 0) {
+      jQuery(".title ." + id).text(" / " + materialName);
+    }else if (id !== "jacket_breadcrumb" && checkSubTitle == 0) {
+      // jQuery(".title span:first").nextAll().remove();
+      jQuery(".title").append("<span class='" + id + "'> / " + materialName + "</span>");
+    }
+
+  }
+
+  function resetSelections() {
+    jQuery(".title, .shield #shielding_name, .closure #closure_name, .shape #shape_name").empty();
+    jQuery(".shield, .closure, .shape").css("display", "none");
+    jQuery("#jacket_name div, #shielding_name div, #closure_name div, #shape_name div").removeClass("selected");
+    jQuery("html, body").animate({scrollTop: jQuery("html").offset().top},800);
+  }
+
+  // function modalPop(n) {
+  //   // modal popup
+  //   let btn = document.getElementById("modal_btn" + [n]);
+  //   let modal = document.getElementById("myModal");
+  //   let span = document.getElementsByClassName("close")[0];
+
+  //   btn.onclick = function() {
+  //     modal.style.display = "block";
+  //   }
+
+  //   span.onclick = function() {
+  //     modal.style.display = "none";
+  //   }
+
+  //   window.onclick = function(event) {
+  //     if (event.target == modal) {
+  //       modal.style.display = "none";
+  //     }
+  //   }
+  // }
+
+  function modalPop(e) {
+
+    // Get the modal
+    let modal = document.getElementById("myModal");
+
+    jQuery("span.close").click(function() {
+      modal.style.display = "none";
+    });
+
+    // When the user clicks the button, open the modal 
+    modal.style.display = "block";
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+  }
+
+</script>
+<script src="https://kit.fontawesome.com/705be73d5a.js" crossorigin="anonymous" defer></script>
+
