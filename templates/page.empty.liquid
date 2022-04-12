@@ -20,6 +20,10 @@
     color: inherit;
   }
 
+  a:link {
+    text-decoration: none;
+  }
+
   div.product-info {
     margin: 0 auto;
     width: 90%;
@@ -72,7 +76,7 @@
     top: 0;
     width: 100%;
     display: flex;
-    z-index: 999;
+    z-index: 1;
     position: sticky;
   }
 
@@ -123,8 +127,8 @@
   .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 10%; /* Location of the box */
+    z-index: 999; /* Sit on top */
+    padding-top: 3%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -140,7 +144,7 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 60%;
+    width: 70%;
     min-height: 40%;
     border-radius: 8px;
   }
@@ -158,6 +162,27 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .modal-content .modal_wrap .prod_title {
+    text-align: center;
+  }
+
+  .modal-content .modal_wrap .button_wrap {
+    text-align: center
+  }
+
+  .modal-content .modal_wrap .content {
+    display: flex
+  }
+
+  .modal-content .modal_wrap .content .prod_img,
+  .modal-content .modal_wrap .content .prod_img img {
+    width: 100%;
+  }
+
+  .modal-content .modal_wrap .content div {
+    padding: 1em;
   }
 
 
@@ -209,7 +234,27 @@
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
-      <p>Popup display</p>
+      <div class="modal_wrap">
+        <div class="prod_title">
+          <h1><a href="/products/shrink-n-shield%C2%AE-3-1">Shrink-N-Shield® (3:1)</a></h1>
+        </div>
+        <div class="content">
+          <div class="prod_img">
+            <a href="/products/shrink-n-shield%C2%AE-3-1">
+              <img src="https://cdn.shopify.com/s/files/1/0577/3534/8362/products/shrink-n-shield-31_black_3-1_1.jpg">
+            </a>
+          </div>
+          <div class="prod_detail">
+            <p>Shrink-N-Shield® (3:1) is an EMI shielding heat-shrink tubing that has a 3:1 shrink ratio and can be cut to length. The flexible, flame-retardant and self-extinguishing polyolefin sleeve can withstand temperatures up to 275°F (135°C). Additionally, the jacketing has excellent abrasion, chemical, fluid and fungus resistance.</p>
+          </div>
+          <div class="prod_spec">
+            sadfasdf
+          </div>
+        </div>
+        <div class="button_wrap">
+          <a href="/pages/contact"><button class="button">Contact Us</button></a>
+        </div>
+      </div>
     </div>
   </div>
 
