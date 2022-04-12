@@ -7,7 +7,7 @@
     "gradient_accent_2": "",
     "colors_text": "#121212",
     "colors_outline_button_labels": "#121212",
-    "colors_background_1": "#d6d6d6",
+    "colors_background_1": "#ffffff",
     "gradient_background_1": "",
     "colors_background_2": "#f3f3f3",
     "gradient_background_2": "",
@@ -138,7 +138,7 @@
         "settings": {
           "color_scheme": "background-2",
           "logo_width": 90,
-          "logo_position": "middle-left",
+          "logo_position": "top-center",
           "menu": "main-menu",
           "menu_type_desktop": "dropdown",
           "show_line_separator": true,
