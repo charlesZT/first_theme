@@ -160,7 +160,7 @@
             "type": "link_list",
             "settings": {
               "heading": "Info",
-              "menu": "main-menu"
+              "menu": "footer"
             }
           },
           "footer-2": {
