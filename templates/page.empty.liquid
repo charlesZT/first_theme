@@ -1,7 +1,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+{% comment %} <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"> {% endcomment %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://kit.fontawesome.com/f440c13f38.js" crossorigin="anonymous" defer></script>
 
@@ -12,7 +12,7 @@
     margin: 0;
     {% comment %} margin-bottom: 15em; {% endcomment %}
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    {% comment %} font-family: 'Roboto', sans-serif; {% endcomment %}
     font-size: 0.9em;
   }
 
@@ -263,7 +263,8 @@
 
 <script>
 
-  const zt_json_url = "https://zippertubing.us/wp-content/uploads/json/product_finder_2.json";
+  {% comment %} const zt_json_url = "https://zippertubing.us/wp-content/uploads/json/product_finder_2.json"; {% endcomment %}
+  const zt_json_url = "https://cdn.shopify.com/s/files/1/0577/3534/8362/files/product_finder_2.json?v=1649855535";
 
   // get jacket names
   jQuery.getJSON(zt_json_url, function(data) {

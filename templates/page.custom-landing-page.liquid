@@ -34,6 +34,9 @@
   <div class="monitor_fill_container">
     <div class="product_list">
       product list
+      {% for product in collections.all.products %}
+        {{ product.image }}
+      {% endfor %}
     </div>
   </div>
   <div class="monitor_fill_container flex">
