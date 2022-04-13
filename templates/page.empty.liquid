@@ -37,7 +37,7 @@
     border: 1px solid #ccc;
     background-color: #fff;
     margin: 1em;
-    width: 14em;
+    width: 14%;
     height: 14em;
     display: inline-flex;
     cursor: pointer;
@@ -52,7 +52,7 @@
   }
 
   div.product-info div span {
-    padding: 0.8em;
+    padding: 0.2em 1em;
     background-color: #e2e2e2;
     height: fit-content;
     width: 100%;
@@ -75,9 +75,13 @@
     {% comment %} position: fixed; {% endcomment %}
     top: 0;
     width: 100%;
-    display: flex;
+    {% comment %} display: flex; {% endcomment %}
     z-index: 1;
     position: sticky;
+  }
+
+  .selected_product .page-width {
+    display: flex;
   }
 
   .selected_product .left {
@@ -144,9 +148,10 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 70%;
+    width: 68%;
     min-height: 40%;
-    border-radius: 8px;
+    border-radius: 10px;
+    margin-bottom: 10em;
   }
 
   /* The Close Button ============== */
@@ -168,8 +173,23 @@
     text-align: center;
   }
 
+  .modal-content .modal_wrap .prod_spec {
+    padding-top: 0;
+  }
+
+  .modal-content .modal_wrap .prod_spec .table_header {
+    background: #ccc;
+    font-weight: bold;
+  }
+
+  .modal-content .modal_wrap .prod_spec table tr {
+    text-align: center;
+    line-height: 1;
+  }
+
   .modal-content .modal_wrap .button_wrap {
-    text-align: center
+    text-align: center;
+    padding: 2em;
   }
 
   .modal-content .modal_wrap .content {
@@ -178,18 +198,44 @@
 
   .modal-content .modal_wrap .content .prod_img,
   .modal-content .modal_wrap .content .prod_img img {
-    width: 100%;
+    width: 80%;
   }
 
   .modal-content .modal_wrap .content div {
     padding: 1em;
+    width: 100%;
+  }
+
+  .modal-content .modal_wrap .button {
+    background: #0151a0;
+    color: white;
   }
 
 
-  @media only screen and (max-width: 1440px) {
+  @media only screen and (max-width: 990px) {
 
     div.product-info {
-      width: 95%;
+      width: 98%;
+    }
+
+    .wrap .selected_product .right.reset span {
+      display: none;
+    }
+
+    .wrap .selected_product .right.reset .fa-solid.fa-rotate {
+      font-size: 1.6em;
+    }
+
+    div#jacket_name div,
+    div#shielding_name div,
+    div#closure_name div,
+    div#shape_name div {
+      margin: 0.4em;
+    }
+
+    #jacket_name,
+    #shielding_name {
+      text-align: center;
     }
 
   }
@@ -199,17 +245,21 @@
 <div class="wrap">
 
   <div class="selected_product">
-    <div class="left"><a href="https://www.zippertubing.com/"><i class="fak fa-zt-zippertubing"></i></a></div>
-    <div class="title"></div>
-    <div class="right reset"><i class="fa-solid fa-rotate"></i>&nbsp;Reset Selections</div>
+    <div class="page-width">
+      <div class="left"><a href="https://www.zippertubing.com/"><i class="fak fa-zt-zippertubing"></i></a></div>
+      <div class="title"></div>
+      <div class="right reset"><i class="fa-solid fa-rotate"></i><span>&nbsp;Reset Selections</span></div>
+    </div>
   </div>
-  <div class="product-info">
+  <div class="product-info page-width">
     <h1>Product Finder</h1>
 
     <section class="jacket">
       <h3>Exterior Material (Jacket Name)</h3>
       <div name="jacket_name" id="jacket_name">
-        <div class="None" data-id="None" style="margin-right: 3px;"><span>None</span></div>
+        <div class="None" data-id="None" style="margin-right: 10px;">
+          <span>None</span>
+        </div>
       </div>
     </section>
     
@@ -246,10 +296,55 @@
           </div>
           <div class="prod_detail">
             <p>Shrink-N-Shield® (3:1) is an EMI shielding heat-shrink tubing that has a 3:1 shrink ratio and can be cut to length. The flexible, flame-retardant and self-extinguishing polyolefin sleeve can withstand temperatures up to 275°F (135°C). Additionally, the jacketing has excellent abrasion, chemical, fluid and fungus resistance.</p>
+            <a href="/pages/contact"><button class="button">Get a Quote</button></a>
           </div>
-          <div class="prod_spec">
-            sadfasdf
-          </div>
+        </div>
+        <div class="prod_spec">
+          <h2>Overall Performance</h2>
+          <table>
+            <tbody>
+              <tr class="table_header">
+                <td>RoHS</td>
+                <td>Shelf Life</td>
+                <td>Abrasion Resistance</td>
+                <td>Shielding Effectiveness</td>
+                <td>Heat Shrink Material</td>
+                <td>Installation Type</td>
+                <td>Purpose</td>
+                <td>Purpose</td>
+              </tr>
+              <tr>
+                <td>Shielding Material</td>
+                <td>Shrink Ratio</td>
+                <td>Material Flexibility</td>
+                <td>Shielding Type</td>
+                <td>Min Temperature</td>
+                <td>Minimum Operating Temperature</td>
+                <td>Max Temperature</td>
+                <td>Maximum Operating Temperature</td>
+              </tr>
+              <tr class="table_header">
+                <td>RoHS-10</td>
+                <td>60 months</td>
+                <td>Best</td>
+                <td>Better</td>
+                <td>Polyolefin</td>
+                <td>Pull-Through</td>
+                <td>EMI Shielding</td>
+                <td>Small Diameters</td>
+              </tr>
+              <tr>
+                <td>Nickel Plated Copper</td>
+                <td>3:1</td>
+                <td>Best</td>
+                <td>Cloth</td>
+                <td>Extreme</td>
+                <td>-67°F (-55°C)</td>
+                <td>Moderate</td>
+                <td>275°F (135°C)</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div class="button_wrap">
           <a href="/pages/contact"><button class="button">Contact Us</button></a>
