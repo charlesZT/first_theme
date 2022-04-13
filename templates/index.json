@@ -102,7 +102,7 @@
         "collection-0": {
           "type": "collection",
           "settings": {
-            "collection": "best-selling-collection"
+            "collection": "zippertubing"
           }
         },
         "product": {
@@ -139,6 +139,7 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
+        "cover_image": "shopify:\/\/shop_images\/maxresdefault.jpg",
         "video_url": "https:\/\/youtu.be\/p4mHOllDqBg",
         "description": "",
         "full_width": false,
