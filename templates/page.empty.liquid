@@ -8,20 +8,19 @@
 <style>
 
   .wrap {
-    {% comment %} background-color: #f8f8f8; {% endcomment %}
     margin: 0;
-    {% comment %} margin-bottom: 15em; {% endcomment %}
     padding: 0;
-    {% comment %} font-family: 'Roboto', sans-serif; {% endcomment %}
     font-size: 0.9em;
   }
-
+  
   a:visited {
     color: inherit;
   }
 
-  a:hover {
+  a:hover,
+  .wrap .selected_product .right.reset span:hover {
     color: #0151a0;
+    text-decoration: underline !important;
   }
 
   a:link {
@@ -214,23 +213,24 @@
     padding: 2em;
   }
 
-  .modal-content .modal_wrap .content {
-    display: flex
+  .modal-content .modal_wrap .content .prod_img {
+    width: 25%;
   }
 
-  .modal-content .modal_wrap .content .prod_img,
-  .modal-content .modal_wrap .content .prod_img img {
-    width: 100%;
+  .modal-content .modal_wrap .content .prod_detail {
+    width: 72%;
+    vertical-align: top;
   }
 
   .modal-content .modal_wrap .content .prod_img img {
     border: 1px solid #ccc;
     border-radius: 10px;
+    width: 100%;
   }
 
   .modal-content .modal_wrap .content div {
     padding: 1em;
-    width: 140%;
+    display: inline-block;
   }
 
   .modal-content .modal_wrap .button {
@@ -267,6 +267,14 @@
     #jacket_name,
     #shielding_name {
       text-align: center;
+    }
+
+  }
+
+  @media only screen and (max-width: 1440px) {
+
+    .modal-content {
+      width: 98%;
     }
 
   }
@@ -317,7 +325,7 @@
       <span class="close">&times;</span>
       <div class="modal_wrap">
         <div class="prod_title">
-          <h1>Shrink-N-Shield® (3:1)<a href="/products/shrink-n-shield%C2%AE-3-1"><span>[See more details]</span></a></h1>
+          <h1>Shrink-N-Shield® (3:1)<a href="/products/shrink-n-shield%C2%AE-3-1" target="_blank"><span>[See more details]</span></a></h1>
         </div>
         <div class="content">
           <div class="prod_img">
@@ -487,7 +495,7 @@
         if (value.JacketName === materialId) {
           if (shieldName.indexOf(value.ShieldingName) < 0) {
             shieldName.push(value.ShieldingName);
-            jQuery("#shielding_name").append("<div class='" + ShieldingName_Class + "' data-id='" + value.ShieldingName + "'><span>" + value.ShieldingName + "</span></div>");
+            jQuery("#shielding_name").append("<div class='" + ShieldingName_Class + "' data-id='" + value.ShieldingName + "'><span><a href='https://www.zippertubing.com/materials/shielding/cloth-shielding/z-7200-c' target='_blank'>" + value.ShieldingName + "</a></span></div>");
             if (ShieldingName_Class !== "NoShielding") {
               jQuery("." + ShieldingName_Class).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + ShieldingName_Class + '.jpg)');
             }
@@ -506,7 +514,7 @@
         if (value.ShieldingName === materialId && value.JacketName === selected_jacketName) {
           if (closureName.indexOf(value.ClosureName) < 0) {
             closureName.push(value.ClosureName);
-            jQuery("#closure_name").append("<div class='" + ClosureName_Class + "' data-id='" + value.ClosureName + "'><span>" + value.ClosureName + "</span></div>");
+            jQuery("#closure_name").append("<div class='" + ClosureName_Class + "' data-id='" + value.ClosureName + "'><span><a href='https://www.zippertubing.com/materials/closure-options/pressure-track/r-track' target='_blank'>" + value.ClosureName + "</a></span></div>");
             jQuery("." + ClosureName_Class).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + ClosureName_Class + '.jpg)');
           }
         }
