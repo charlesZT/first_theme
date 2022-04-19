@@ -402,12 +402,12 @@
   jQuery.getJSON(zt_json_url, function(data) {
     let jacketName = [];
     jQuery.each(data, function(key, value){
-      let JacketName_Class = value.JacketName.replace(/[{( )}]/g, '');
+      let JacketName_Class = value.JacketName.replace(/[{( : )}]/g, '');
       if (jacketName.indexOf(value.JacketName) < 0) {
         jacketName.push(value.JacketName);
         if (value.JacketName != "None") {
           jQuery("#jacket_name").append("<div class='" + JacketName_Class + "' data-id='" + value.JacketName + "'><span><a href='https://www.zippertubing.com/materials/jacketing/coated-fabrics/srfg-32' target='_blank'>" + value.JacketName + "</a></span></div>");
-          jQuery("." + JacketName_Class).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + value.JacketName + '.jpg)');
+          jQuery("." + JacketName_Class).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + JacketName_Class + '.jpg)');
         }
       }
     });
@@ -491,7 +491,7 @@
       // create function to get shield material and add option to select tag
       let shieldName = [];
       jQuery.each(data, function(key, value){
-        let ShieldingName_Class = value.ShieldingName.replace(/[{( )}]/g, '');
+        let ShieldingName_Class = value.ShieldingName.replace(/[{( : )}]/g, '');
         if (value.JacketName === materialId) {
           if (shieldName.indexOf(value.ShieldingName) < 0) {
             shieldName.push(value.ShieldingName);
@@ -510,7 +510,7 @@
       // create function to get closure and add option to select tag
       let closureName = [];
       jQuery.each(data, function(key, value) {
-        let ClosureName_Class = value.ClosureName.replace(/[{( )}]/g, '');
+        let ClosureName_Class = value.ClosureName.replace(/[{( : )}]/g, '');
         if (value.ShieldingName === materialId && value.JacketName === selected_jacketName) {
           if (closureName.indexOf(value.ClosureName) < 0) {
             closureName.push(value.ClosureName);
@@ -527,7 +527,7 @@
       let shapeName = [];
       let n = 0;
       jQuery.each(data, function(key, value) {
-        let ShapeName_Class = value.ShapeName.replace(/[{( )}]/g, '');
+        let ShapeName_Class = value.ShapeName.replace(/[{( : )}]/g, '');
         if (value.ClosureName === materialId && value.ShieldingName === selected_closureName && value.JacketName === selected_jacketName) {
           if (shapeName.indexOf(value.ShapeName) < 0) {
             shapeName.push(value.ShapeName);

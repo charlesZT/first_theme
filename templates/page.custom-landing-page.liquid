@@ -34,8 +34,8 @@
   <div class="monitor_fill_container">
     <div class="product_list">
       product list
-      {% for product in collections.all.products %}
-        {{ product.image }}
+      {% for image in product.images %}
+        {{ image | image_url: width: 300 }}
       {% endfor %}
     </div>
   </div>
@@ -49,3 +49,4 @@
   </div>
 </div>
 
+{% include 'my-featured-collection' with handle: 'best-sellers' %}
