@@ -225,6 +225,7 @@
                 {{ product.description }}
               </div>
             {%- endif -%}
+        NSN: {{ product.metafields.my_fields.nsn }}
           {%- when 'custom_liquid' -%}
             {{ block.settings.custom_liquid }}
           {%- when 'collapsible_tab' -%}
