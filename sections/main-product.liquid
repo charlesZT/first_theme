@@ -225,6 +225,7 @@
                 {{ product.description }}
               </div>
             {%- endif -%}
+        NSN: {{ product.metafields.my_fields.nsn }}
           {%- when 'custom_liquid' -%}
             {{ block.settings.custom_liquid }}
           {%- when 'collapsible_tab' -%}
@@ -245,7 +246,6 @@
                 </div>
               </details>
             </div>
-        NSN: {{ product.metafields.my_fields.nsn }}
           {%- when 'quantity_selector' -%}
             <div class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
               <label class="form__label" for="Quantity-{{ section.id }}">
