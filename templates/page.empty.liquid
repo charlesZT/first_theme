@@ -122,8 +122,7 @@
     position: relative;
   }
 
-  .jacket .None:before,
-  .NoShielding:before {
+  .jacket .None:before {
     content:  "\f05e";
     font-family: FontAwesome;
     position:absolute;
@@ -407,17 +406,22 @@
   // get jacket names
   jQuery.getJSON(zt_json_url, function(data) {
     let jacketName = [];
-    jQuery.each(data, function(key, value){
-      let JacketName_Class = value.JacketName.replace(/[{( : )}]/g, '');
+    let jacketNameList = [];
+    jQuery.each(data, function(key, value) {
       if (jacketName.indexOf(value.JacketName) < 0) {
         jacketName.push(value.JacketName);
-        if (value.JacketName != "None") {
-          jQuery("#jacket_name").append("<div class='" + JacketName_Class + "' data-id='" + value.JacketName + "'><span>" + value.JacketName + "<a href='https://www.zippertubing.com/materials/jacketing/coated-fabrics/srfg-32' target='_blank'><i class='fa-solid fa-circle-info'></i></a></span></div>");
-          jQuery("." + JacketName_Class).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + JacketName_Class + '.jpg)');
-          jQuery("." + JacketName_Class).css('background-size', '100% 100%');
-        }
+        jacketNameList = jacketName.sort();
       }
     });
+    jacketNameList.map( getJacketValue );
+    function getJacketValue(jacketValue) {
+      jacketValueNew = jacketValue.replace(/[{( :/ )}]/g, '');
+      if (jacketValueNew != "None") {
+        jQuery("#jacket_name").append("<div class='" + jacketValueNew + "' data-id='" + jacketValue + "'><span>" + jacketValue + "<a href='https://www.zippertubing.com/materials/jacketing/coated-fabrics/srfg-32' target='_blank'><i class='fa-solid fa-circle-info'></i></a></span></div>");
+        jQuery("." + jacketValueNew).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + jacketValueNew + '.jpg)');
+        jQuery("." + jacketValueNew).css('background-size', '100% 100%');
+      }
+    }
   });
 
   // create onchange on select and call function to create options
@@ -482,34 +486,30 @@
       resetSelections();
     });
 
-    // jQuery("#jacket_name div").mouseover(function(e) {
-    //   console.log(this);
-    //   jQuery(this).css("width", "1000px").css("height", "1000px").css("position", "absolute");
-    // });
-    // jQuery("#jacket_name div").mouseout(function(e) {
-    //   console.log(this);
-    //   jQuery(this).css("width", "15em").css("height", "15em").css("position", "unset");
-    // });
-
   });
 
   function getShieldResult(materialId) {
     jQuery.getJSON(zt_json_url, function(data) {
       // create function to get shield material and add option to select tag
       let shieldName = [];
-      jQuery.each(data, function(key, value){
-        let ShieldingName_Class = value.ShieldingName.replace(/[{( : )}]/g, '');
+      let shieldNameList = [];
+      jQuery.each(data, function(key, value) {
         if (value.JacketName === materialId) {
           if (shieldName.indexOf(value.ShieldingName) < 0) {
             shieldName.push(value.ShieldingName);
-            jQuery("#shielding_name").append("<div class='" + ShieldingName_Class + "' data-id='" + value.ShieldingName + "'><span>" + value.ShieldingName + "<a href='https://www.zippertubing.com/materials/shielding/cloth-shielding/z-7200-c' target='_blank'><i class='fa-solid fa-circle-info'></i></a></span></div>");
-            if (ShieldingName_Class !== "NoShielding") {
-              jQuery("." + ShieldingName_Class).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + ShieldingName_Class + '.jpg)');
-              jQuery("." + ShieldingName_Class).css('background-size', '100% 100%');
-            }
+            shieldNameList = shieldName.sort();
           }
         }
       });
+      shieldNameList.map( getShieldingValue );
+      function getShieldingValue(ShieldingValue) {
+        ShieldingValueNew = ShieldingValue.replace(/[{( :/ )}]/g, '');
+        if (ShieldingValueNew != "None") {
+          jQuery("#shielding_name").append("<div class='" + ShieldingValueNew + "' data-id='" + ShieldingValue + "'><span>" + ShieldingValue + "<a href='https://www.zippertubing.com/materials/jacketing/coated-fabrics/srfg-32' target='_blank'><i class='fa-solid fa-circle-info'></i></a></span></div>");
+          jQuery("." + ShieldingValueNew).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + ShieldingValueNew + '.jpg)');
+          jQuery("." + ShieldingValueNew).css('background-size', '100% 100%');
+        }
+      }
     });
   }
 
@@ -517,17 +517,24 @@
     jQuery.getJSON(zt_json_url, function(data) {
       // create function to get closure and add option to select tag
       let closureName = [];
+      let ClosureNameList = [];
       jQuery.each(data, function(key, value) {
-        let ClosureName_Class = value.ClosureName.replace(/[{( : )}]/g, '');
         if (value.ShieldingName === materialId && value.JacketName === selected_jacketName) {
           if (closureName.indexOf(value.ClosureName) < 0) {
             closureName.push(value.ClosureName);
-            jQuery("#closure_name").append("<div class='" + ClosureName_Class + "' data-id='" + value.ClosureName + "'><span>" + value.ClosureName + "<a href='https://www.zippertubing.com/materials/closure-options/pressure-track/r-track' target='_blank'><i class='fa-solid fa-circle-info'></i></a></span></div>");
-            jQuery("." + ClosureName_Class).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + ClosureName_Class + '.jpg)');
-            jQuery("." + ClosureName_Class).css('background-size', '100% 100%');
+            ClosureNameList = closureName.sort();
           }
         }
       });
+      ClosureNameList.map( getClosureNameValue );
+      function getClosureNameValue(ClosureNameValue) {
+        ClosureNameValueNew = ClosureNameValue.replace(/[{( :/ )}]/g, '');
+        if (ClosureNameValueNew != "None") {
+          jQuery("#closure_name").append("<div class='" + ClosureNameValueNew + "' data-id='" + ClosureNameValue + "'><span>" + ClosureNameValue + "<a href='https://www.zippertubing.com/materials/jacketing/coated-fabrics/srfg-32' target='_blank'><i class='fa-solid fa-circle-info'></i></a></span></div>");
+          jQuery("." + ClosureNameValueNew).css('background-image', 'url(https://zippertubing.us/wp-content/uploads/product_finder/' + ClosureNameValueNew + '.jpg)');
+          jQuery("." + ClosureNameValueNew).css('background-size', '100% 100%');
+        }
+      }        
     });
   }
 
@@ -536,7 +543,7 @@
       let shapeName = [];
       let n = 0;
       jQuery.each(data, function(key, value) {
-        let ShapeName_Class = value.ShapeName.replace(/[{( : )}]/g, '');
+        let ShapeName_Class = value.ShapeName.replace(/[{( :/ )}]/g, '');
         if (value.ClosureName === materialId && value.ShieldingName === selected_closureName && value.JacketName === selected_jacketName) {
           if (shapeName.indexOf(value.ShapeName) < 0) {
             shapeName.push(value.ShapeName);
