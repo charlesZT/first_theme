@@ -12,6 +12,11 @@
     padding: 0;
     font-size: 0.9em;
   }
+
+  a:link {
+    color: #121212;
+    text-decoration: none;
+  }
   
   a:visited {
     color: inherit;
@@ -21,10 +26,6 @@
   .wrap .selected_product .right.reset span:hover {
     color: #0151a0;
     text-decoration: underline !important;
-  }
-
-  a:link {
-    text-decoration: none;
   }
 
   div.product-info {
@@ -436,7 +437,7 @@
         selected_jacketName = target.dataset.id;
         jQuery(target).addClass("selected");
         jQuery(".shield").show("fast");
-        jQuery("html, body").animate({scrollTop: jQuery("section.shield").offset().top - 80},800);
+        jQuery("html, body").animate({scrollTop: jQuery("section.shield").offset().top - 110},800);
         topBreadCrumb(selected_jacketName, "jacket_breadcrumb");
       }
     });
@@ -451,7 +452,7 @@
         selected_shieldingName = target.dataset.id;
         jQuery(target).addClass("selected");
         jQuery(".closure").show("fast");
-        jQuery("html, body").animate({scrollTop: jQuery("section.closure").offset().top - 80},800);
+        jQuery("html, body").animate({scrollTop: jQuery("section.closure").offset().top - 110},800);
         topBreadCrumb(selected_shieldingName, "shielding_breadcrumb");
       }
     });
@@ -466,7 +467,7 @@
         selected_closureName = target.dataset.id;
         jQuery(target).addClass("selected");
         jQuery(".shape").show("fast");
-        jQuery("html, body").animate({scrollTop: jQuery("section.shape").offset().top - 80},800);
+        jQuery("html, body").animate({scrollTop: jQuery("section.shape").offset().top - 110},800);
         topBreadCrumb(selected_closureName, "closure_breadcrumb");
       }
     });
