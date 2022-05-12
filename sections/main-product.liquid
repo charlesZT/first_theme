@@ -482,6 +482,23 @@
     </div>
   </div>
 
+<!-- Begin Recently Viewed Products -->
+
+{{ Shopify.products }}
+
+{% comment %} {{ '//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js' | script_tag }}
+{{ 'jquery.products.min.js' | asset_url | script_tag }} {% endcomment %}
+
+{% if template contains 'product' %}
+
+<script>
+Shopify.Products.recordRecentlyViewed({ howManyToShow:4 });
+</script>
+
+{% endif %}
+
+<!-- End Recently Viewed Products -->
+
   <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
     <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
       <button id="ModalClose-{{ section.id }}" type="button" class="product-media-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
