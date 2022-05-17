@@ -868,8 +868,8 @@
 
 </div>
 
-<script src="js/jquery.twentytwenty.js"></script> 
-<script src="js/jquery.event.move.js"></script> 
+{{ 'jquery.twentytwenty.js' | asset_url | script_tag }}
+{{ 'jquery.event.move.js' | asset_url | script_tag }}
 <script type="text/javascript">
 	$(".compare_imgs").twentytwenty({no_overlay: true,move_with_handle_only: false});
 
