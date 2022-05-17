@@ -1,0 +1,58 @@
+  <div class="custom-landing-page page-width">
+  <div class="monitor_fill_container flex">
+    <div class="photo">
+      <img src="https://via.placeholder.com/600x400?text=photo">
+    </div>
+    <div class="photo_desc">
+      <h3>Title Lorem ipsum</h3>
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      <button class="button">Learn More</button>
+    </div>
+  </div>
+  <div class="monitor_fill_container">
+    <div class="video_player">
+      <iframe src="https://www.youtube.com/embed/p4mHOllDqBg?enablejsapi=1" class="js-youtube" allow="autoplay; encrypted-media" allowfullscreen="" title=""></iframe>
+    </div>
+  </div>
+  <div class="monitor_fill_container">
+    <div class="case_studies">
+      <div>Industries</div>
+    </div>
+  </div>
+  <div class="monitor_fill_container">
+    <div class="product_list">
+      product list
+      {% for image in product.images %}
+        {{ image | image_url: width: 300 }}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="monitor_fill_container flex">
+    <div class="not_find">
+      <img src="https://via.placeholder.com/600x400?text=Can't+find+what+you+are+looking+for?">
+    </div>
+    <div class="contact_form">
+      {% form 'customer_login' %}
+
+        <div>
+          <label for="customerEmail">Email Address</label>
+          <input type="email"
+            name="customer[email]"
+            id="customerEmail"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email">
+        </div>
+        <div>
+          <label for="customerPassword">Password</label>
+          <input type="password"
+            name="customer[password]"
+            id="customerPassword">
+        </div>
+      
+        <input type="submit" value="Sign In" />
+      
+      {% endform %}
+    </div>
+  </div>
+</div>
