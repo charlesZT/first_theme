@@ -2,7 +2,12 @@
 
 <style type="text/css">
 
-  .accordion {
+	.faq_wrap {
+		max-width: 1500px;
+		margin: 0 auto;
+	}
+
+  .faq_wrap .accordion {
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -13,22 +18,23 @@
     background-color: #fff;
   }
 
-  .active, .accordion:hover {
+  .faq_wrap .active,
+	.faq_wrap .accordion:hover {
     color: #005cb8;
   }
 
-  .accordion:before {
+  .faq_wrap .accordion:before {
     content: '\002B';
     font-weight: bold;
     margin-right: 10px;
   }
 
-  .active:before {
+  .faq_wrap .active:before {
     content: "\2212";
   }
 
-  .panel {
-    padding: 0 18px;
+  .faq_wrap .panel {
+    padding: 0 18px 0 2.5em;
     background-color: white;
     max-height: 0;
     overflow: hidden;
@@ -37,86 +43,95 @@
     border-bottom: 1px solid #eaeaea;
   }
 
+	.faq_wrap img.img-fluid {
+		max-width: 700px;
+	}
+
 </style>
 
-<button class="accordion">Do you have stock?</button>
-<div class="panel">
-  <p>Some of our products are partially assembled and can have a quick finish. Most are build specific to the customers demand.</p>
-</div>
+<div class="faq_wrap">
 
-<button class="accordion">Can I get a quote on some of that Zippertubing®?</button>
-<div class="panel">
-  <p>The name of the company is Zippertubing® and the products can vary. Please <a href="/contact" title="Contact Zippertubing to speak to a technical support or engineer">contact</a> our technical support or engineering to find what product suits your application best.</p>
-</div>
+	<button class="accordion">Do you have stock?</button>
+	<div class="panel">
+		<p>Some of our products are partially assembled and can have a quick finish. Most are build specific to the customers demand.</p>
+	</div>
 
-<button class="accordion">How are the part numbers depicted?</button>
-<div class="panel">
-  <p>
-    <div class="row flex-box-center-vertically">
-      <div class="col-sm-6">
-        <p> Example Part Number – ZT99-16-052-1.0-B-B </p>
-        <p><a href="https://zt-s3-documents.s3.us-west-1.amazonaws.com/ZT-Part-Numbers.pdf" target="_blank">Download</a> a PDF of this example to keep for your future reference.</p>
-        <a href="https://zt-s3-documents.s3.us-west-1.amazonaws.com/ZT-Part-Numbers.pdf" target="_blank"> <img class="img-fluid clickable" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/docs/part-numbers-sheet.jpg" alt="part numbers sheet"></a>
-      </div>
-      <div class="col-sm-6">
-        <p> ZT – This is the start of all finished products
-          <br> ZTXX | XX = the year that the product was first built.
-          <br> ZT99-XX | XX = the closure/category.
-          <br> ZT99-16-XXX | XXX= the sequential order of a drawing.
-          <br> ZT99-16-052-X.X | X.X = the diameter of the product in inches.
-          <br> ZT99-16-052-1.0-X | X = the color of the jacketing material.
-          <br> ZT99-16-052-1.0-B-X | X = the color of the closure.
-          <br> ZT99-16-052-1.0-B-B-X600.0 | the length as described in inches, if applicable. </p>
-      </div>
-    </div>
-  </p>
-</div>
+	<button class="accordion">Can I get a quote on some of that Zippertubing®?</button>
+	<div class="panel">
+		<p>The name of the company is Zippertubing® and the products can vary. Please <a href="/contact" title="Contact Zippertubing to speak to a technical support or engineer">contact</a> our technical support or engineering to find what product suits your application best.</p>
+		<p><iframe width="560" height="315" src="https://www.youtube.com/embed/KxmjgBhSd8Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="video"></iframe></p>
+	</div>
 
-<button class="accordion">Are your products UL rated?</button>
-<div class="panel">
-  <p>Many of our bundling and shielding products are UL rated. Look for the UL mark on the product page or go <a href="/products?UL=1" title="See our UL rated products">here</a> for a full list of our UL rated products.</p>
-</div>
+	<button class="accordion">How are the part numbers depicted?</button>
+	<div class="panel">
+		<p>
+			<div class="row flex-box-center-vertically">
+				<div class="col-sm-6">
+					<p> Example Part Number – ZT99-16-052-1.0-B-B </p>
+					<p><a href="https://zt-s3-documents.s3.us-west-1.amazonaws.com/ZT-Part-Numbers.pdf" target="_blank">Download</a> a PDF of this example to keep for your future reference.</p>
+					<a href="https://zt-s3-documents.s3.us-west-1.amazonaws.com/ZT-Part-Numbers.pdf" target="_blank"> <img class="img-fluid clickable" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/docs/part-numbers-sheet.jpg" alt="part numbers sheet"></a>
+				</div>
+				<div class="col-sm-6">
+					<p> ZT – This is the start of all finished products
+						<br> ZTXX | XX = the year that the product was first built.
+						<br> ZT99-XX | XX = the closure/category.
+						<br> ZT99-16-XXX | XXX= the sequential order of a drawing.
+						<br> ZT99-16-052-X.X | X.X = the diameter of the product in inches.
+						<br> ZT99-16-052-1.0-X | X = the color of the jacketing material.
+						<br> ZT99-16-052-1.0-B-X | X = the color of the closure.
+						<br> ZT99-16-052-1.0-B-B-X600.0 | the length as described in inches, if applicable. </p>
+				</div>
+			</div>
+		</p>
+	</div>
 
-<button class="accordion">Do you make custom lengths or is there a standard size that comes on a spool?</button>
-<div class="panel">
-  <p>Most of our products can be provided in custom lengths and ready to install. We can also easily add drain wire extensions, lugs, terminals, or other end finishing details that your project requires.</p>
-</div>
+	<button class="accordion">Are your products UL rated?</button>
+	<div class="panel">
+		<p>Many of our bundling and shielding products are UL rated. Look for the UL mark on the product page or go <a href="/products?UL=1" title="See our UL rated products">here</a> for a full list of our UL rated products.</p>
+	</div>
 
-<button class="accordion">I’m not sure what track closure would be best for my application, do you have a recommendation?</button>
-<div class="panel">
-  <p> You can review our track comparison <a href="javascript{};" data-toggle="modal" data-target="#trackComparisonModal" title="See track comparison">here</a> or call one of our customer service or engineering representatives to help decide on the best closure. </p><p><iframe width="560" height="315" src="https://www.youtube.com/embed/_FACkqTStbk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-  </p>
-</div>
+	<button class="accordion">Do you make custom lengths or is there a standard size that comes on a spool?</button>
+	<div class="panel">
+		<p>Most of our products can be provided in custom lengths and ready to install. We can also easily add drain wire extensions, lugs, terminals, or other end finishing details that your project requires.</p>
+	</div>
 
-<button class="accordion">What size tape should I order and how much should I buy?</button>
-<div class="panel">
-  <p>Every installation is different but you can check out our <a href="https://resources.zippertubing.com/tech-tips/tape-wrapping-wire-cable-harnesses-guide/" title="See our tape wrapping guide">tape wrapping guide</a> for recommendations on usage.</p>
-</div>
+	<button class="accordion">I’m not sure what track closure would be best for my application, do you have a recommendation?</button>
+	<div class="panel">
+		<p> You can review our track comparison <a href="javascript{};" data-toggle="modal" data-target="#trackComparisonModal" title="See track comparison">here</a> or call one of our customer service or engineering representatives to help decide on the best closure. </p><p><iframe width="560" height="315" src="https://www.youtube.com/embed/_FACkqTStbk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+		</p>
+	</div>
 
-<button class="accordion">I can’t find my part number on your site?</button>
-<div class="panel">
-  <p>If the part number starts ZTZ- or ZTR- you may have an old part number. Please <a href="/contact" title="Contact us and speak to a Zippertubing customer service representative or engineer">contact</a> one of our customer service or engineering representatives to help you determine the appropriate updated part number.</p>
-</div>
+	<button class="accordion">What size tape should I order and how much should I buy?</button>
+	<div class="panel">
+		<p>Every installation is different but you can check out our <a href="https://resources.zippertubing.com/tech-tips/tape-wrapping-wire-cable-harnesses-guide/" title="See our tape wrapping guide">tape wrapping guide</a> for recommendations on usage.</p>
+	</div>
 
-<button class="accordion">What is the shelf life of my product and do you have storage recommendations?</button>
-<div class="panel">
-  <p>Shelf life information can be found (link to <a href="https://resources.zippertubing.com/technical-data/shelf-life-recommendations/" title="Shelf life documentation and information">shelf life document</a>).</p>
-</div>
+	<button class="accordion">I can’t find my part number on your site?</button>
+	<div class="panel">
+		<p>If the part number starts ZTZ- or ZTR- you may have an old part number. Please <a href="/contact" title="Contact us and speak to a Zippertubing customer service representative or engineer">contact</a> one of our customer service or engineering representatives to help you determine the appropriate updated part number.</p>
+	</div>
 
-<button class="accordion">I used to use a chemical to seal the track after closing it, do you still have that?</button>
-<div class="panel">
-  <p>The ZTQ sealing process is no longer recommended, we now recommend using ZT-Tape to seal the track.</p>
-</div>
+	<button class="accordion">What is the shelf life of my product and do you have storage recommendations?</button>
+	<div class="panel">
+		<p>Shelf life information can be found (link to <a href="https://resources.zippertubing.com/technical-data/shelf-life-recommendations/" title="Shelf life documentation and information">shelf life document</a>).</p>
+	</div>
 
-<button class="accordion">What is the MOQ?</button>
-<div class="panel">
-  <p>The MOQ (Minimum Order Quantity) is different for each product. Please request a quote from our customer service team at customer.service@zippertubing.com. Lead time and Minimum order quantity will be included on this quote.</p>
-</div>
+	<button class="accordion">I used to use a chemical to seal the track after closing it, do you still have that?</button>
+	<div class="panel">
+		<p>The ZTQ sealing process is no longer recommended, we now recommend using ZT-Tape to seal the track.</p>
+	</div>
 
-<button class="accordion">How to convert Zippertubing's® &nbsp;v/Mil to voltage?</button>
-<div class="panel">
-  <p> <strong>500 v/Mil x 35 Mil (thickness) = 17.5 Kv (17,500 Volts)</strong> </p>
-  <p> Convert inches to Mil:&nbsp; 0.035 X 1000 = 35 Mil(Thousandth of an inch) </p>
+	<button class="accordion">What is the MOQ?</button>
+	<div class="panel">
+		<p>The MOQ (Minimum Order Quantity) is different for each product. Please request a quote from our customer service team at customer.service@zippertubing.com. Lead time and Minimum order quantity will be included on this quote.</p>
+	</div>
+
+	<button class="accordion">How to convert Zippertubing's® &nbsp;v/Mil to voltage?</button>
+	<div class="panel">
+		<p> <strong>500 v/Mil x 35 Mil (thickness) = 17.5 Kv (17,500 Volts)</strong> </p>
+		<p> Convert inches to Mil:&nbsp; 0.035 X 1000 = 35 Mil(Thousandth of an inch) </p>
+	</div>
+
 </div>
 
 <script>
