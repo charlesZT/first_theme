@@ -1,144 +1,923 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <style type="text/css">
+	.about_us_wrap .row {
+		margin: 3em 0;
+	}
+	.about_us_wrap .col_6 {
+    position: relative;
+    padding: 8em 3em;
+    margin: 1em;
+    max-width: 26em;
+    background: #f8f8f9;
+		height: 30em;
+	}
+	.about_us_wrap .col_6 span {
+		position: absolute;
+  	top: -5em;
+  	left: 27%;
+	}
+	.about_us_wrap .col-section {
+		text-align: center;
+		padding: 5em;
+	}
+	.about_us_wrap .col-display-table {
+		display: table;
+		margin: 10em auto;
+	}
+	.about_us_wrap p.title {
+		color: #005cb8;
+	}
+	.about_us_wrap .twentytwenty-wrapper .col-md-4 {
+		padding-left: 0;
+	}
 
-  .aboutus-wrap {
-    
+
+
+/*** engineering team css ***/
+	@-webkit-keyframes slidein {
+	  0% {
+	    top: -600px;
+	    opacity: 0;
+	  }
+	  100% {
+	    opacity: 1;
+	    top: 0px;
+	  }
+	}
+	@keyframes slidein {
+	  0% {
+	    top: -600px;
+	    opacity: 0;
+	  }
+	  100% {
+	    opacity: 1;
+	    top: 0px;
+	  }
+	}
+	@-webkit-keyframes slideout {
+	  0% {
+	    top: 0;
+	    opacity: 1;
+	  }
+	  100% {
+	    top: 600px;
+	    opacity: 0;
+	  }
+	}
+	@keyframes slideout {
+	  0% {
+	    top: 0;
+	    opacity: 1;
+	  }
+	  100% {
+	    top: 600px;
+	    opacity: 0;
+	  }
+	}
+	#scene {
+	  display: flex;
+	  align-items: center;
+	  justify-content: left;
+	  width: 1500px;
+	  height: 400px;
+	  position: relative;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  margin: auto;
+	  background-color: #fff;
+	  overflow: hidden;
+	}
+	#scene #left-zone {
+	  background: #fff;
+	  height: 70%;
+	  flex-grow: 0;
+	  display: flex;
+	  width: 350px;
+	  align-items: center;
+	  justify-content: left;
+	}
+	#scene #left-zone .list {
+	  display: flex;
+	  list-style: none;
+	  align-content: stretch;
+	  flex-direction: column;
+	  flex-grow: 1;
+	  margin: 0;
+	  padding: 0;
+	}
+	#scene #left-zone .list li.item input[type=radio] {
+	  display: none;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ label {
+	  display: block;
+	  opacity: 0.5;
+	  height: 50px;
+	  /*text-align: center;*/
+	  line-height: 50px;
+	  padding: 0.6em;
+	  text-transform: uppercase;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ label:first-letter {
+	  text-transform: uppercase;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ label:hover {
+	  opacity: 0.75;
+	  cursor: pointer;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ label span {
+		padding-left: 5em;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ label.label_scott:before {
+	  content: " ";
+	  display: block;
+	  position: absolute;
+	  width: 60px;
+	  height: 60px;
+	  /*margin-left: 15px;*/
+	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Scott_Y.png");
+	  background-position: center;
+	  background-size: 75% 75%;
+	  background-repeat: no-repeat;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ label.label_matt:before {
+	  content: " ";
+	  display: block;
+	  position: absolute;
+	  width: 60px;
+	  height: 60px;
+	  /*margin-left: 15px;*/
+	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Matt_H.png");
+	  background-position: center;
+	  background-size: 75% 75%;
+	  background-repeat: no-repeat;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ label.label_jonathan:before {
+	  content: " ";
+	  display: block;
+	  position: absolute;
+	  width: 60px;
+	  height: 60px;
+	  /*margin-left: 15px;*/
+	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Jonathan_S.png");
+	  background-position: center;
+	  background-size: 75% 75%;
+	  background-repeat: no-repeat;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ label.label_madison:before {
+	  content: " ";
+	  display: block;
+	  position: absolute;
+	  width: 60px;
+	  height: 60px;
+	  /*margin-left: 15px;*/
+	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Madison_L.png");
+	  background-position: center;
+	  background-size: 75% 75%;
+	  background-repeat: no-repeat;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ label.label_taylor:before {
+	  content: " ";
+	  display: block;
+	  position: absolute;
+	  width: 60px;
+	  height: 60px;
+	  /*margin-left: 15px;*/
+	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Taylor_B.png");
+	  background-position: center;
+	  background-size: 75% 75%;
+	  background-repeat: no-repeat;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ .content {
+	  position: absolute;
+	  left: 30%;
+	  top: -400px;
+	  width: 60%;
+	  height: 400px;
+	  -webkit-animation-duration: 0.75s;
+	          animation-duration: 0.75s;
+	  -webkit-animation-name: slideout;
+	          animation-name: slideout;
+	  -webkit-animation-timing-function: ease-out;
+	          animation-timing-function: ease-out;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  /*flex-direction: column;*/
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ .content span.right {
+		width: 50%;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ .content.content_scott .picto {
+	  height: 25em;
+	  width: 25em;
+	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Scott_Y.png");
+	  background-position: center;
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ .content h1 {
+	  color: #434345;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ .content.content_matt .picto {
+	  height: 25em;
+	  width: 25em;
+	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Matt_H.png");
+	  background-position: center;
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ .content.content_jonathan .picto {
+	  height: 25em;
+	  width: 25em;
+	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Jonathan_S.png");
+	  background-position: center;
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ .content.content_madison .picto {
+	  height: 25em;
+	  width: 25em;
+	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Madison_L.png");
+	  background-position: center;
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ .content.content_taylor .picto {
+	  height: 25em;
+	  width: 25em;
+	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Taylor_B.png");
+	  background-position: center;
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ .content h1:first-letter {
+	  text-transform: uppercase;
+	}
+	#scene #left-zone .list li.item input[type=radio] ~ .content p {
+	  /*max-width: 50%;*/
+	  /*text-align: center;*/
+	}
+	#scene #left-zone .list li.item input[type=radio]:checked ~ label {
+	  opacity: 1;
+	  -webkit-animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	          animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	  color: #434345;
+	  border-right: solid 4px #0064a8;
+	  text-transform: uppercase;
+	}
+	#scene #left-zone .list li.item input[type=radio]:checked ~ .content {
+	  -webkit-animation-duration: 0.75s;
+	          animation-duration: 0.75s;
+	  -webkit-animation-name: slidein;
+	          animation-name: slidein;
+	  -webkit-animation-fill-mode: forwards;
+	          animation-fill-mode: forwards;
+	  -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	}
+	#scene #middle-border {
+	  background-color: #b4b4b5;
+	  height: 70%;
+	  flex-grow: 1;
+	  max-width: 2px;
+	  z-index: 0;
+	}
+	#scene #right-zone {
+	  background: #fff;
+	  height: 100%;
+	  flex-grow: 3;
+	}
+
+
+/**** time styling ****/
+  .timeline {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 700px;
+    position: relative;
   }
-  
-  .accordion {
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
+  .timeline__content-title {
+    font-weight: normal;
+    font-size: 66px;
+    margin: -10px 0 0 0;
     transition: 0.4s;
-    background-color: #fff;
+    box-sizing: border-box;
+    color: #fff;
   }
-
-  .active, .accordion:hover {
-    color: #005cb8;
-  }
-
-  .accordion:before {
-    content: '\002B';
-    font-weight: bold;
-    margin-right: 10px;
-  }
-
-  .active:before {
-    content: "\2212";
-  }
-
-  .panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+  .timeline__content-desc {
     margin: 0;
-    border-bottom: 1px solid #eaeaea;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: normal;
+    line-height: 25px;
+  }
+  .timeline:before {
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: #d3d3d3;
+  }
+  @media only screen and (max-width: 767px) {
+    .timeline:before {
+      left: 40px;
+    }
+  }
+  .timeline-item {
+    transition: 0.5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+    margin-top: 20em;
+		margin-bottom: 20em;
+  }
+  .timeline-item:before {
+    /* content: attr(data-text); */
+    letter-spacing: 3px;
+    width: 100%;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
+    top: 70%;
+    margin-top: -5px;
+    padding-left: 15px;
+    opacity: 0;
+    right: calc(-100% - 56px);
+  }
+  .timeline-item:nth-child(odd) {
+    align-self: flex-end;
+  }
+  .timeline-item:nth-child(odd):before {
+    right: auto;
+    text-align: right;
+    left: calc(-100% - 56px);
+    padding-left: 0;
+    border-left: none;
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    padding-right: 15px;
+  }
+  .timeline-item--active {
+    opacity: 1;
+    /* transform: translateY(0); */
+    filter: blur(0px);
+  }
+  .timeline-item--active:before {
+    top: 50%;
+    transition: 0.3s all 0.2s;
+    opacity: 1;
+  }
+  .timeline-item--active .timeline__content-title {
+    margin: 0;
+  }
+  @media only screen and (max-width: 767px) {
+    .timeline-item {
+      align-self: baseline !important;
+      width: 100%;
+      padding: 0 30px 150px 80px;
+    }
+    .timeline-item:before {
+      left: 10px !important;
+      padding: 0 !important;
+      top: 50px;
+      text-align: center !important;
+      width: 60px;
+      border: none !important;
+    }
+    .timeline-item:last-child {
+      padding-bottom: 40px;
+    }
+  }
+  .timeline__img {
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+  }
+  .timeline-container {
+    width: 100%;
+    position: relative;
+    transition: 0.3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .timeline-container:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    content: "";
+  }
+  .timeline-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 100px;
+    position: relative;
+  }
+  .timeline-header__title {
+    color: #fff;
+    font-size: 46px;
+    font-weight: normal;
+    margin: 0;
+  }
+  .timeline-header__subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+  }
+
+  .demo-footer {
+    padding: 60px 0;
+    text-align: center;
+  }
+  .demo-footer a {
+    color: #999;
+    display: inline-block;
   }
 
 </style>
 
-<div class="aboutus-wrap">
-  <button class="accordion">Do you have stock?</button>
-  <div class="panel">
-    <p>Some of our products are partially assembled and can have a quick finish. Most are build specific to the customers demand.</p>
-  </div>
+<div class="about_us_wrap">
 
-  <button class="accordion">Can I get a quote on some of that Zippertubing®?</button>
-  <div class="panel">
-    <p>The name of the company is Zippertubing® and the products can vary. Please <a href="/contact" title="Contact Zippertubing to speak to a technical support or engineer">contact</a> our technical support or engineering to find what product suits your application best.</p>
-  </div>
+	<div class="row">
+	  <div class="col-md-7">
+	    <p>Zippertubing® is a manufacturer of EMI shielding, specialized heat shrink, cable bundling, heat shielding, and marine fairing solutions. From re-enterable wraparound to pull-through jacketing, and from snap button to continuous zipper closures, we have solutions to meet the needs of a wide range of industries and application requirements. Whether it is a cable bundling solution that will be installed on a robot or an EMI shielding solution that will be used on a spacecraft, Zippertubing® will create a solution for you. No longer will you have to sacrifice your expectations or requirements to the solution. Instead, the solution will be customized to you.</p>
+	  </div>
+	  <div class="col-md-4 compare_imgs">
+			<img src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/Then.jpg" />
+			<img src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/Now.jpg" />
+	  </div>
+	</div>
+	<div class="row col-section" style="text-align: center; background: #f8f8f9; padding: 1em;">
+		<p>Our Mission</p>
+		<p>To empower innovation through materials, science and collaboration.</p>
+	</div>
+	<div class="row col-section">
+		<p>Why Choose Zippertubing?</p>
+	</div>
+	<div class="row col-display-table">
+	  <div class="col-md-4 col_6">
+	  	<span>
+	  		<img src="https://via.placeholder.com/150" style="border-radius: 50%;">
+	  	</span>
+	  	<h4>American Made</h4>
+	  	<p>Zippertubing® has been providing American-made engineered products around the globe since 1957. We manufacture all of our products in-house at our state-of-the-art facility in Chandler, AZ. You can trust that Zippertubing® will have the right solution to meet your specific component challenges.</p>
+	  </div>
+	  <div class="col-md-4 col_6">
+	  	<span>
+	  		<img src="https://via.placeholder.com/150" style="border-radius: 50%;">
+	  	</span>
+	  	<h4>Personalized Service</h4>
+	  	<p>Our sales and in-house engineering teams are readily available to answer all of your product questions and concerns. They can also can customize a solution to your particular problem. Communication with our customers is very important to us, and we are readily available to work with you directly whether it be through the phone, email, in person or video conference. Zippertubing® also offers free webinars that can be specifically geared toward your unique component protection issue.</p>
+	  </div>
+	  <div class="col-md-4 col_6">
+	  	<span>
+	  		<img src="https://via.placeholder.com/150" style="border-radius: 50%;">
+	  	</span>
+	  	<h4>Prototyping</h4>
+	  	<p>With our wide range of capabilities, we can help you or your team determine your component problem, as well as offer free engineering design and prototyping services to ensure the product works and functions as you or your company expects it to.</p>
+	  </div>
+	</div>
+	<div class="row col-display-table">
+	  <div class="col-md-4 col_6">
+	  	<span>
+	  		<img src="https://via.placeholder.com/150" style="border-radius: 50%;">
+	  	</span>
+	  	<h4>Quality</h4>
+	  	<p>Zippertubing® has been manufacturing quality, American-made products and solutions in-house since 1957. Most of our products are made-to-order to ensure optimum shelf-life. Zippertubing® is currently pursuing ISO 14001 and AS9100 certifications and has achieved ISO 9001 and IATF 16949 certifications, so you can be assured your order will exceed the highest quality standards.</p>
+	  </div>
+	  <div class="col-md-4 col_6">
+	  	<span>
+	  		<img src="https://via.placeholder.com/150" style="border-radius: 50%;">
+	  	</span>
+	  	<h4>In-House Engineering</h4>
+	  	<p>Zippertubing® offers free engineering design and prototyping services to help get your project started. Our engineers deliver a blend of experience from different specialties and backgrounds, as well as keep up to date with pertinent trends, environmental changes, specifications and restrictions. This ensures that your product will comply with your industry’s requirements; and it will function specifically to your needs.</p>
+	  </div>
+	  <div class="col-md-4 col_6">
+	  	<span>
+	  		<img src="https://via.placeholder.com/150" style="border-radius: 50%;">
+	  	</span>
+	  	<h4>Installation & Testing</h4>
+	  	<p>Zippertubing® engineers will assist you in installation and testing whether it be on-site or via video conference to ensure proper installation and that product features are working as per your expectations.</p>
+	  </div>
+	</div>
+	<div class="row col-section">
+		<h4>Customer Service Team</h4>
+		<p>Our customer service team is readily available to help you with all of your product questions, needs and orders.<br>They will also advise if a standard product or a custom-engineered solution will best address your component challenge.</p>
+	</div>
+	<div class="row">
+	  <div class="col-md-4">
+	  	<div>
+	  		<img src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/Kyle_B.png">
+	  	</div>
+	  	<div>
+	  		<h4>Kyle B</h4>
+	  		<p class="title">Sals Manager</p>
+	  	</div>
+	  	<div>
+	  		<div>Zippertubing® Experience: 6 years</div>
+	  		<div>Kyle Bergstrom has worked with the Zippertubing® owners since 2004, bringing a decade of technical sales experience to his current role as the company’s Sales Manager.</div>
+	  	</div>
+	  </div>
+	  <div class="col-md-4">
+	  	<div>
+	  		<img src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/Suzy_K.png">
+	  	</div>
+	  	<div>
+	  		<h4>Suzy K</h4>
+	  		<p class="title">Customer Support Specialist</p>
+	  	</div>
+	  	<div>
+	  		<div>Zippertubing® Experience: 4 years</div>
+	  		<div>Suzanne Kane is a Customer Support Specialist at Zippertubing®, where she has been quoting and assisting customers in the Sales department since 2017.</div>
+	  	</div>
+	  </div>
+	  <div class="col-md-4">
+	  	<div>
+	  		<img src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/Missie_M.png">
+	  	</div>
+	  	<div>
+	  		<h4>Missie ,</h4>
+	  		<p class="title">Customer Support Specialist</p>
+	  	</div>
+	  	<div>
+	  		<div>Zippertubing® Experience: 7 years</div>
+	  		<div>Melissa Martinez has been with Zippertubing® since 2013, starting in accounting for the first two years, then moving into sales as a Customer Support Specialist.</div>
+	  	</div>
+	  </div>
+	</div>
+	<div class="row col-section">
+		<h4>Engineering Team</h4>
+		<p>The collective expertise of our in-house engineering team can provide you with endless ways to solve your component issues and create a solution — everything from conceptualizing to final product.</p>
+	</div>
+	<div class="row">
+		
+	  <div id="scene">
+	    <div id="left-zone">
+	      <ul class="list">
+	        <li class="item">
+	          <input type="radio" id="eng_team_1" name="basic_carousel" value="eng_team_1" checked="checked"/>
+	          <label class="label_scott" for="eng_team_1"><span>Scott Yee</span></label>
+	          <div class="content content_scott"><span class="picto"></span>
+	          	<span class="right">
+		            <h1>Scott Yee</h1>
+		            <p class="title">Engineer Manager</p>
+		            <p>Scott earned his Bachelors of Science in Aerospace Engineering from Arizona State University in Tempe, AZ. He has experience in systems program management, aerospace systems, optical components, optical systems, semiconductor processing equipment, testing and R&D product development. Scott is currently responsible for overseeing design concepts, new product development and improvement of existing product lines.</p>
+		          </span>
+	          </div>
+	        </li>
+	        <li class="item">
+	          <input type="radio" id="eng_team_2" name="basic_carousel" value="eng_team_2"/>
+	          <label class="label_matt" for="eng_team_2"><span>Matt Hesselbacher</span></label>
+	          <div class="content content_matt"><span class="picto"></span>
+	          	<span class="right">
+		            <h1>Matt Hesselbacher</h1>
+		            <p class="title">Principal Engineer</p>
+		            <p>Matt earned his Bachelors of Science in Electrical Engineering from the University of Arizona in Tucson, AZ. He has many years of experience in the aerospace industry designing electrical subsystems and cable harnesses for missiles and satellite launch systems. Matt is currently responsible for product training, EMI shielding design, new product development, and legacy product support.</p>
+		          </span>
+	          </div>
+	        </li>
+	        <li class="item">
+	          <input type="radio" id="eng_team_3" name="basic_carousel" value="eng_team_3"/>
+	          <label class="label_jonathan" for="eng_team_3"><span>Jonathan Speirs</span></label>
+	          <div class="content content_jonathan"><span class="picto"></span>
+	          	<span class="right">
+		            <h1>Jonathan Speirs</h1>
+		            <p class="title">Senior Production Engineer</p>
+		            <p>Jonathan earned his Bachelors of Science in Manufacturing Engineering Technology from Brigham Young University in Provo, UT. He has experience designing products, fixtures, gauges, and other manufacturing aids to ensure streamlined processing of material through each phase of production. Jonathan is currently involved in new product development, manufacturing support, and automotive tooling & fixture design.</p>
+		          </span>
+	          </div>
+	        </li>
+	        <li class="item">
+	          <input type="radio" id="eng_team_4" name="basic_carousel" value="eng_team_4"/>
+	          <label class="label_madison" for="eng_team_4"><span>Madison Lenschow</span></label>
+	          <div class="content content_madison"><span class="picto"></span>
+	          	<span class="right">
+		            <h1>Madison Lenschow</h1>
+		            <p class="title">Design Engineer</p>
+		            <p>Madison earned her Bachelors of Science in Mechanical Engineering from Northern Arizona University in Flagstaff, AZ. She has experience developing and testing mobility systems and prototype electro-mechanical systems. Madison is responsible for new product development, field support for product installations, and general product training.</p>
+		          </div>
+		        </span>
+	        </li>
+	        <li class="item">
+	          <input type="radio" id="eng_team_5" name="basic_carousel" value="eng_team_5"/>
+	          <label class="label_taylor" for="eng_team_5"><span>Taylor Black</span></label>
+	          <div class="content content_taylor"><span class="picto"></span>
+	          	<span class="right">
+		            <h1>Taylor Black</h1>
+		            <p class="title">Material Engineer</p>
+		            <p>Taylor earned his Bachelors of Science in Polymer Science & Engineering from Case Western Reserve University in Cleveland, OH. He has experience developing various material compounds and optimizing their performance characteristics by adjusting process parameters and incorporating additives. Taylor is responsible for new product and materials testing as well as material and process refinement based on industry specific requirements.</p>
+		          </span>
+	          </div>
+	        </li>
+	      </ul>
+	    </div>
+	    <div id="middle-border"></div>
+	    <div id="right-zone"></div>
+	  </div>
+	</div>
 
-  <button class="accordion">How are the part numbers depicted?</button>
-  <div class="panel">
-    <p>
-      <div class="row flex-box-center-vertically">
-        <div class="col-sm-6">
-          <p> Example Part Number – ZT99-16-052-1.0-B-B </p>
-          <p><a href="https://zt-s3-documents.s3.us-west-1.amazonaws.com/ZT-Part-Numbers.pdf" target="_blank">Download</a> a PDF of this example to keep for your future reference.</p>
-          <a href="https://zt-s3-documents.s3.us-west-1.amazonaws.com/ZT-Part-Numbers.pdf" target="_blank"> <img class="img-fluid clickable" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/docs/part-numbers-sheet.jpg" alt="part numbers sheet"></a>
-        </div>
-        <div class="col-sm-6">
-          <p> ZT – This is the start of all finished products
-            <br> ZTXX | XX = the year that the product was first built.
-            <br> ZT99-XX | XX = the closure/category.
-            <br> ZT99-16-XXX | XXX= the sequential order of a drawing.
-            <br> ZT99-16-052-X.X | X.X = the diameter of the product in inches.
-            <br> ZT99-16-052-1.0-X | X = the color of the jacketing material.
-            <br> ZT99-16-052-1.0-B-X | X = the color of the closure.
-            <br> ZT99-16-052-1.0-B-B-X600.0 | the length as described in inches, if applicable. </p>
-        </div>
-      </div>
-    </p>
-  </div>
+	<div class="row">
 
-  <button class="accordion">Are your products UL rated?</button>
-  <div class="panel">
-    <p>Many of our bundling and shielding products are UL rated. Look for the UL mark on the product page or go <a href="/products?UL=1" title="See our UL rated products">here</a> for a full list of our UL rated products.</p>
-  </div>
+		<div class="timeline-container" id="timeline-1">
+			<div class="timeline">
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1864.jpg"/>
+				  <h2 class="timeline__content-title">1864</h2>
+				  <p class="timeline__content-desc">It all started with a grain of salt. The Crystal Salt Works was established as a family business by John Allen and Charles Allen Plummer.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1901.jpg"/>
+				  <h2 class="timeline__content-title">1901</h2>
+				  <p class="timeline__content-desc">Walter Allen Plummer Sr. founded the W.A. Plummer Manufacturing Company in Oakland and San Francisco, California. The business grew from a small specialty manufacturer of burlap and cotton bags for the banking and farming community to the largest and most influential commercial textile company in the West.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1906.jpg"/>
+				  <h2 class="timeline__content-title">1906</h2>
+				  <p class="timeline__content-desc">Shortly after an earthquake and fire, the company supplied tents and camping products to the survivors of the disaster.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1916.jpg"/>
+				  <h2 class="timeline__content-title">1916</h2>
+				  <p class="timeline__content-desc">Patented the Desert Water Bag used by campers, auto tourists, hikers and miners.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1917.jpg"/>
+				  <h2 class="timeline__content-title">1917</h2>
+				  <p class="timeline__content-desc">Unfurling the largest flag in the world on Market Street by W.A. Plummer Manufacturing Company, April 4th, 1917.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1920.jpg"/>
+				  <h2 class="timeline__content-title">1920</h2>
+				  <p class="timeline__content-desc">Within 20 years, the company experienced exponential growth with office expansion in both the Pacific Northwest and Los Angeles. W.A. Plummer Manufacturing Company was the largest canvas products company, supplying tents to the mining, trade shows, carnivals and tent rental trades as well as recreational areas, such as tent houses in Yosemite National Park and other popular parks and campgrounds.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1922.jpg"/>
+				  <h2 class="timeline__content-title">1922</h2>
+				  <p class="timeline__content-desc">W.A. Plummer Manufacturing Company branched out to the automotive industry with complete camping gear, tents and camping accessories.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1929.jpg"/>
+				  <h2 class="timeline__content-title">1929</h2>
+				  <p class="timeline__content-desc">The Depression took a toll on the company, causing a dramatic reduction in operations. W. A. Plummer Manufacturing Company moved to Los Angeles in 1929 and remained there until after The Zippertubing® Company formed. During the transition, as well as many years following, W.A. Plummer Manufacturing Company continued to serve all around the United States.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1942.jpg"/>
+				  <h2 class="timeline__content-title">1942</h2>
+				  <p class="timeline__content-desc">Victory water bag made for the WWII troops along with many other government contracts.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1953.jpg"/>
+				  <h2 class="timeline__content-title">1953</h2>
+				  <p class="timeline__content-desc">Zippertubing® started in the corner of the W. A. Plummer Manufacturing Company building.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1957.jpg"/>
+				  <h2 class="timeline__content-title">1957</h2>
+				  <p class="timeline__content-desc">
+					As the founder of The Zippertubing® Company in 1957, Walter Allen Plummer Jr. had worked with his father for many years at W. A. Plummer Manufacturing Company. Following WWII, industry needs shifted; plastics and synthetics were the future. Walter traveled the world in true entrepreneurial fashion, establishing ZT Japan and Zipper-Technik Germany manufacturing facilities. With numerous patents in his name, Walter Allen Plummer Jr. used cutting-edge technologies to surpass industry competitors.
+				  </p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1960.jpg"/>
+				  <h2 class="timeline__content-title">1960</h2>
+				  <p class="timeline__content-desc">Supplied high-temp wraps to launch facilities for the upcoming rocket and aerospace programs.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1965.jpg"/>
+				  <h2 class="timeline__content-title">1965</h2>
+				  <p class="timeline__content-desc">Zipper-Technik, GmbH founded and established in West Germany.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1969.jpg"/>
+				  <h2 class="timeline__content-title">1969</h2>
+				  <p class="timeline__content-desc">Pile jackets installed in La Harbor to protect wood and steel piling in bay harbors.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1970.jpg"/>
+				  <h2 class="timeline__content-title">1970</h2>
+				  <p class="timeline__content-desc">First international sales meeting in Totowa, New Jersey.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1971.jpg"/>
+				  <h2 class="timeline__content-title">1971</h2>
+				  <p class="timeline__content-desc">Zippertubing® Japan founded in Kobe.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1985b.jpg"/>
+				  <h2 class="timeline__content-title">1985</h2>
+				  <p class="timeline__content-desc">Space shuttle helium barrier bags designed and supplied for the space shuttles and main engines.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1985a.jpg"/>
+				  <h2 class="timeline__content-title">1985</h2>
+				  <p class="timeline__content-desc">Ticon, GmbH founded in Switzerland.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/1990.jpg"/>
+				  <h2 class="timeline__content-title">1990</h2>
+				  <p class="timeline__content-desc">Zippertubing® experienced growth, but not without speed bumps along the way. Through the 1990s, the quality standards from automotive manufacturers became increasingly more scrutinized, which made it difficult for the company to immediately conform. But that didn’t stop Zippertubing® from working through issues and finding the right people to help. D-Track, designed in Germany, and produced by Ticon, gave Zipper-Technik a jacket for cable harness assemblies on most Mercedes-Benz® trucks and buses.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/2000.jpg"/>
+				  <h2 class="timeline__content-title">2000</h2>
+				  <p class="timeline__content-desc">Zippertubing® designed NSF cable splice covers for the Arctic Neutrino detection program.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/2006.jpg"/>
+				  <h2 class="timeline__content-title">2006</h2>
+				  <p class="timeline__content-desc">Zippertubing® received ISO 9001 certification on October 2, 2006.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/2012.jpg"/>
+				  <h2 class="timeline__content-title">2012</h2>
+				  <p class="timeline__content-desc">At the end of 2012, Zippertubing® established ZT-Ren in China to provide specialized, high-temp protective jackets for the Chinese manufacturing markets.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/2015.jpg"/>
+				  <h2 class="timeline__content-title">2015</h2>
+				  <p class="timeline__content-desc">Zippertubing® received IATF/TS 16949 certification on November 6, 2015.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/2017.jpg"/>
+				  <h2 class="timeline__content-title">2017</h2>
+				  <p class="timeline__content-desc">ZT Fab founded in Zhuhai, China.</p>
+				</div>
+			  </div>
+			  <div class="timeline-item" data-text="FATHER OF THE TURKS">
+				<div class="timeline__content"><img class="timeline__img" src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/timeline/2020.jpg"/>
+				  <h2 class="timeline__content-title">2020</h2>
+				  <p class="timeline__content-desc">With cutting edge technologies, Zippertubing® was able to expand its capabilities. The CNC Knife Table, in particular, has allowed the company to develop a wider range of material options, which enabled growth in the defense, electronics and automotive industries.</p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+				
+	</div>
 
-  <button class="accordion">Do you make custom lengths or is there a standard size that comes on a spool?</button>
-  <div class="panel">
-    <p>Most of our products can be provided in custom lengths and ready to install. We can also easily add drain wire extensions, lugs, terminals, or other end finishing details that your project requires.</p>
-  </div>
+	<div class="row col-section">
+		<h4>Success Stories</h4>
+		<p>Zippertubing® has manufactured solutions for customers with both common and unique component challenges.<br>Read on to learn more about how our products and services exceeded their expectations.</p>
+	</div>
 
-  <button class="accordion">I’m not sure what track closure would be best for my application, do you have a recommendation?</button>
-  <div class="panel">
-    <p> You can review our track comparison <a href="javascript{};" data-toggle="modal" data-target="#trackComparisonModal" title="See track comparison">here</a> or call one of our customer service or engineering representatives to help decide on the best closure. </p><p><iframe width="560" height="315" src="https://www.youtube.com/embed/_FACkqTStbk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-    </p>
-  </div>
+	<div class="row">
+		<div class="container">
+		  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+		    <!-- Indicators -->
+		    <ol class="carousel-indicators">
+		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		      <li data-target="#myCarousel" data-slide-to="1"></li>
+		      <li data-target="#myCarousel" data-slide-to="2"></li>
+		    </ol>
 
-  <button class="accordion">What size tape should I order and how much should I buy?</button>
-  <div class="panel">
-    <p>Every installation is different but you can check out our <a href="https://resources.zippertubing.com/tech-tips/tape-wrapping-wire-cable-harnesses-guide/" title="See our tape wrapping guide">tape wrapping guide</a> for recommendations on usage.</p>
-  </div>
+		    <!-- Wrapper for slides -->
+		    <div class="carousel-inner">
 
-  <button class="accordion">I can’t find my part number on your site?</button>
-  <div class="panel">
-    <p>If the part number starts ZTZ- or ZTR- you may have an old part number. Please <a href="/contact" title="Contact us and speak to a Zippertubing customer service representative or engineer">contact</a> one of our customer service or engineering representatives to help you determine the appropriate updated part number.</p>
-  </div>
+		      <div class="item active">
+		        <img src="https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/MillerEdge.png" alt="Miller Edge, Inc." style="width:100%;">
+		        <div class="carousel-caption">
+		          <h3>Miller Edge, Inc.</h3>
+		          <p>I engaged Zippertubing on a development project after careful review of their online products and capabilities. Matt and his team met with me and provided hands-on review and technical details of existing products and their impressive library of material samples. They offer robust protective coverings made from natural and synthetic fabrics, metal and polymer foils and films and a huge assortment of engineered structures developed for specific functions such as puncture and abrasion resistance, EMI shielding and more. We talked about our product performance demands and cost considerations. We also reviewed conceptual design details about our vision of the finished product. Just a week later Matt called me back for another meeting where I was shown actual proof of concept assemblies as well as functional prototypes. It took a few more iterations to iron out details, but the Zippertubing engineering and sales experts were able to develop timely and cost effective protective covering solutions to our demanding performance requirements. 10 out of 10.<p>Kelly Hedegard<br>Tempe Branch Manager<br>Miller Edge, Inc.</p>
+		        </div>
+		      </div>
 
-  <button class="accordion">What is the shelf life of my product and do you have storage recommendations?</button>
-  <div class="panel">
-    <p>Shelf life information can be found (link to <a href="https://resources.zippertubing.com/technical-data/shelf-life-recommendations/" title="Shelf life documentation and information">shelf life document</a>).</p>
-  </div>
+		      <div class="item">
+		        <img src="https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/Magneticomm.png" alt="Magneticomm" style="width:100%;">
+		        <div class="carousel-caption">
+		          <h3>Magneticomm</h3>
+		          <p>The Zippertubing Company sales engineer was very responsive and was interested in finding the correct solutions to our problems. The Zippertubing Company got us samples quickly and helped us make a decision on our needs in short order.<p>Greg Trook<br>Magneticomm</p>
+		        </div>
+		      </div>
+		    
+		      <div class="item">
+		        <img src="https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/Leco.png" alt="LECO" style="width:100%;">
+		        <div class="carousel-caption">
+		          <h3>LECO</h3>
+		          <p>Working with the Engineering group at Zippertubing to create a custom solution to a RF shielding problem was a great experience. From the initial consultation to the final product, communication and prototype delivery were above my expectations and ultimately produced a terrific production solution for our company.<p>Tim Judkins<br>Product Engineer<br>LECO</p>
+		        </div>
+		      </div>
+		    
+		      <div class="item">
+		        <img src="https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/GeckoRobotics.png" alt="GeckoRobotics" style="width:100%;">
+		        <div class="carousel-caption">
+		          <h3>GeckoRobotics</h3>
+		          <p>The Zippertubing team was able to quickly turnaround a request for a custom jacketing system which met our specifications. The team was knowledgeable about their products, capabilities and materials which made the process simple and worthwhile.<p>Michael Binger<br>Mechanical Engineer II<br>GeckoRobotics</p>
+		        </div>
+		      </div>
+		    
+		      <div class="item">
+		        <img src="https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/Global_Aerospace.png" alt="Global Aerospace" style="width:100%;">
+		        <div class="carousel-caption">
+		          <h3>Global Aerospace</h3>
+		          <p>We recently worked with Zippertubing on the design of a submerged fuel hose system for the Navy. Zippertubing was responsible for the design and fabrication of engineering model hardware that we used for mechanical property testing. In addition, they designed and fabricated 450 feet of prototype hardware that was delivered to the Navy for eventual ocean testing. We were impressed with the creativity and expertise of the design and production engineers and Zippertubing’s willingness to go the extra mile. We would highly recommend Zippertubing to other companies seeking innovative solutions to challenging problems.<p>Kerry T. Nock<br>President<br>Global Aerospace</p>
+		        </div>
+		      </div>
+		  
+		    </div>
 
-  <button class="accordion">I used to use a chemical to seal the track after closing it, do you still have that?</button>
-  <div class="panel">
-    <p>The ZTQ sealing process is no longer recommended, we now recommend using ZT-Tape to seal the track.</p>
-  </div>
+		    <!-- Left and right controls -->
+		    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		      <span class="glyphicon glyphicon-chevron-left"></span>
+		      <span class="sr-only">Previous</span>
+		    </a>
+		    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		      <span class="glyphicon glyphicon-chevron-right"></span>
+		      <span class="sr-only">Next</span>
+		    </a>
+		  </div>
+		</div>
+	</div>
 
-  <button class="accordion">What is the MOQ?</button>
-  <div class="panel">
-    <p>The MOQ (Minimum Order Quantity) is different for each product. Please request a quote from our customer service team at customer.service@zippertubing.com. Lead time and Minimum order quantity will be included on this quote.</p>
-  </div>
-
-  <button class="accordion">How to convert Zippertubing's® &nbsp;v/Mil to voltage?</button>
-  <div class="panel">
-    <p> <strong>500 v/Mil x 35 Mil (thickness) = 17.5 Kv (17,500 Volts)</strong> </p>
-    <p> Convert inches to Mil:&nbsp; 0.035 X 1000 = 35 Mil(Thousandth of an inch) </p>
-  </div>
 </div>
 
-<script>
-var acc = document.getElementsByClassName("accordion");
-var i;
+<script src="js/jquery.twentytwenty.js"></script> 
+<script src="js/jquery.event.move.js"></script> 
+<script type="text/javascript">
+	$(".compare_imgs").twentytwenty({no_overlay: true,move_with_handle_only: false});
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
+
+
+  (function ($) {
+    $.fn.timeline = function () {
+      var selectors = {
+        id: $(this),
+        item: $(this).find(".timeline-item"),
+        activeClass: "timeline-item--active",
+        img: ".timeline__img"
+      };
+      selectors.item.eq(0).addClass(selectors.activeClass);
+      selectors.id.css(
+        "background-image",
+        "url(" + selectors.item.first().find(selectors.img).attr("src") + ")"
+      );
+      var itemLength = selectors.item.length;
+      $(window).scroll(function () {
+        var max, min;
+        var pos = $(this).scrollTop();
+        selectors.item.each(function (i) {
+          min = $(this).offset().top - 300;
+          max = $(this).height() + $(this).offset().top - 300;
+          var that = $(this);
+          if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+            selectors.item.removeClass(selectors.activeClass);
+            selectors.id.css(
+              "background-image",
+              "url(" + selectors.item.last().find(selectors.img).attr("src") + ")"
+            );rgba(0,0,0,.6)
+            selectors.item.last().addClass(selectors.activeClass);
+          } else if (pos <= max - 40 && pos >= min) {
+            selectors.id.css(
+              "background-image",
+              "url(" + $(this).find(selectors.img).attr("src") + ")"
+            );
+            selectors.item.removeClass(selectors.activeClass);
+            $(this).addClass(selectors.activeClass);
+          }
+        });
+      });
+    };
+  })(jQuery);
+
+  $("#timeline-1").timeline();
+
+
 </script>
+
