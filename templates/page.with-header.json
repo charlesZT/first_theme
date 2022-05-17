@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-header",
+      "settings": {
+        "show_large": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
