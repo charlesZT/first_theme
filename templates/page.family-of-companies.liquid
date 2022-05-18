@@ -1,111 +1,298 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<style type="text/css">
-	.distributors_wrap {
+<style>
 
+	.map-container {
+		display:inline-block;
+		margin-left:-1px;
+		margin-top:-1px;
+		position:relative
 	}
-	.distributor_list {
-		margin-top: 4em;
+	.map-container img {
+		display:block;
+		max-width:100%
 	}
-	.distributor {
+	.location-dot {
+		-webkit-animation:pulse  2s infinite;
+		animation:pulse  2s infinite;
+		background-color:rgba(255,255,255,1);
+		background-position:top;
+		background-repeat:no-repeat;
+		background-size:contain;
+		border-radius:50%;
+		box-shadow:0 0 0 rgba(204,169,44,.4);
+		cursor:pointer;
+		height:12px;
+		position:absolute;
+		transition:all .4s;
+		width:12px
+	}
+	.location-dot :hover{
+		height:24px;
+		width:24px
+	}
+	.location-dot:hover>.location-dot__content {
+		display:block
+	}
+	.location-dot__content {
+		--tw-translate-y:-50%;
+		--tw-bg-opacity:1;
+		background-color:rgba(0,0,0,var(--tw-bg-opacity));
+		border-radius:4px;
+		display:none;
+		padding:12px;
+		position:absolute;
+		right:75%;
+		top:50%;
+		transform:var(--tw-transform);
+		white-space:nowrap;
+		z-index:1000
+	}
+	.location-dot__usa {
+		left:11.1%;
+		top:48.4%
+	}
+	.location-dot__usa .location-dot__content {
+		left:75%;
+		right:auto
+	}
+	.location-dot__europe {
+		left:48.05%;
+		top:31%
+	}
+	.location-dot__europe .location-dot__content {
+		--tw-translate-y:-32%;
+		transform:var(--tw-transform)
+	}
+	.location-dot__china {
+		left:80.08%;
+		top:55%
+	}
+	.location-dot__japan {
+		left:87.07%;
+		top:46%
+	}
+	.family-of-companies__logos {
+		display:block;
+		margin:0 auto
+	}
+	.tw-inline-block {
+		display: inline-block;
+		margin: 10px;
+		color: white;
+	}
+	.main_ofiice {
+		display: flex;
+		padding: 5em;
+	}
+	.main_ofiice img {
+		width: 60%;
+	}
+	.hq_address {
+		font-size: 1.2em;
+	}
+	.foc_list {
+		margin-top: 6em;
+	}
+	.foc_list .row div {
 		padding: 2em;
-		margin: 1.6em;
-		background: #f8f8f9;
 	}
-	.distributor p {
-		text-align: center;
+	.foc_list img {
+		height: 5em;
 	}
-	.svg-inline--fa.fa-w-16 {
-		width: 1em;
-		vertical-align: -0.125em;
+
+
+	@media screen and (max-width:992px){
+		.location-dot {
+				display:none
+		}
+		.mobile {
+				margin-right:10px
+		}
+		.mobile-container {
+				place-content:center
+		}
 	}
+	@media screen and (max-width:768px){
+		.border-muted {
+				border-style:none
+		}
+		.mobile-container ,.mobile-text_align_center {
+				text-align:center
+		}
+	}
+	@media screen and (min-width:769px){
+		hr {
+				display:none
+		}
+	}
+	@-webkit-keyframes pulse {
+		0%{
+				-webkit-box-shadow:0 0 0 0 rgba(204,169,44,.4)
+		}
+		70%{
+				-webkit-box-shadow:0 0 0 32px rgba(204,169,44,0)
+		}
+		to{
+				-webkit-box-shadow:0 0 0 0 rgba(204,169,44,0)
+		}
+	}
+	@keyframes pulse {
+		0%{
+				box-shadow:0 0 0 0 rgba(204,169,44,.4)
+		}
+		70%{
+				box-shadow:0 0 0 32px rgba(204,169,44,0)
+		}
+		to{
+				box-shadow:0 0 0 0 rgba(204,169,44,0)
+		}
+	}
+
 </style>
 
-<div class="distributors_wrap container">
-	<h4 class="text-center">Zippertubing® understands the importance of your applications needs, and knows how important it is to receive an authentically engineered Zippertubing® product. That is why we have carefully selected our distributor network to meet not only our own business needs, but your own business’s needs as well.</h4>
-	<div class="distributor_list row col-display-table">
-		<div class="distributor col-md-3">
-			<p><img src="https://via.placeholder.com/200x50?text=Kreger" alt="Kreger"></p>
-			<h5>Phone: (540) 389-6565</h5>
-			<h5>Toll Free: 1 (800) 609-8186</h5>
-			<h5>
-				<svg class="svg-inline--fa fa-flag-usa fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="flag-usa" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M32 0C14.3 0 0 14.3 0 32v464c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V32C64 14.3 49.7 0 32 0zm267.9 303.6c-57.2-15.1-111.7-28.8-203.9 11.1V384c185.7-92.2 221.7 53.3 397.5-23.1 11.4-5 18.5-16.5 18.5-28.8v-36c-43.6 17.3-80.2 24.1-112.1 24.1-37.4-.1-68.9-8.4-100-16.6zm0-96c-57.2-15.1-111.7-28.8-203.9 11.1v61.5c94.8-37.6 154.6-22.7 212.1-7.6 57.2 15.1 111.7 28.8 203.9-11.1V200c-43.6 17.3-80.2 24.1-112.1 24.1-37.4 0-68.9-8.3-100-16.5zm9.5-125.9c51.8 15.6 97.4 29 202.6-20.1V30.8c0-25.1-26.8-38.1-49.4-26.6C291.3 91.5 305.4-62.2 96 32.4v151.9c94.8-37.5 154.6-22.7 212.1-7.6 57.2 15 111.7 28.7 203.9-11.1V96.7c-53.6 23.5-93.3 31.4-126.1 31.4s-59-7.8-85.7-15.9c-4-1.2-8.1-2.4-12.1-3.5V75.5c7.2 2 14.3 4.1 21.3 6.2zM160 128.1c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16-7.2 16-16 16zm0-55.8c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm64 47.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm0-55.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16z"></path></svg>
-				<span>Nationwide</span>
-			</h5>
+<div class="foc_wrap">
+
+	<div class="map-container">
+		<img src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/backgrounds/dark-world-map.png" alt="" />
+		<div class="location-dot location-dot__usa">
+			<div class="location-dot__content">
+				<h3>U.S.A. Locations</h3>
+				<div class="tw-inline-block">
+					<small class="tw-text-gray-100">Headquarter</small>
+					<h5 class="tw-text-gray-100"><strong>Zippertubing&reg;</strong></h5>
+					<p class="tw-text-gray-100">
+						7150 W. Erie St. <br />Chandler, AZ 85226
+					</p>
+					<p class="tw-text-gray-100 tw-mb-0">P: (480) 285-3990<br>F: (480) 285-3997</p>
+					<a href="http://www.zippertubing.com/" title="Zippertubing" target="_blank">www.zippertubing.com</a>
+				</div>
+				<div class="tw-inline-block tw-ml-3">
+					<h5 class="tw-text-gray-100">
+						<strong>Ziptape Label I.D. Systems</strong>
+					</h5>
+					<p class="tw-text-gray-100">
+						2122 W. 5th Place <br />Tempe, AZ 85281
+					</p>
+					<p class="tw-text-gray-100 tw-mb-0">P: (480) 966-2999</p>
+					<p class="tw-text-gray-100">F: (480) 285-4625</p>
+					<a href="http://www.ziptape.com/" target="_blank" title="Ziptape Label I.D. Systems">www.ziptape.com</a>
+				</div>
+				<div class="tw-inline-block tw-ml-3 mobile-spacing">
+					<h5 class="tw-text-gray-100">
+						<strong>Techlite Insulation</strong>
+					</h5>
+					<p class="tw-text-gray-100">
+						2122 W. 5th Place <br />Tempe, AZ 85281
+					</p>
+					<p class="tw-text-gray-100 tw-mb-0">P: (480) 967-8888</p>
+					<p class="tw-text-gray-100">F: (480) 894-6255</p>
+					<a href="http://www.techlite.com/" target="_blank" title="Techlite Insulation">www.techlite.com</a>
+				</div>
+			</div>
 		</div>
-		<div class="distributor col-md-3">
-			<p><img src="https://via.placeholder.com/200x50?text=PEI-Genesis" alt="PEI-Genesis"></p>
-			<h5>Phone: (540) 389-6565</h5>
-			<h5>Toll Free: 1 (800) 609-8186</h5>
-			<h5>
-				<svg class="svg-inline--fa fa-flag-usa fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="flag-usa" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M32 0C14.3 0 0 14.3 0 32v464c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V32C64 14.3 49.7 0 32 0zm267.9 303.6c-57.2-15.1-111.7-28.8-203.9 11.1V384c185.7-92.2 221.7 53.3 397.5-23.1 11.4-5 18.5-16.5 18.5-28.8v-36c-43.6 17.3-80.2 24.1-112.1 24.1-37.4-.1-68.9-8.4-100-16.6zm0-96c-57.2-15.1-111.7-28.8-203.9 11.1v61.5c94.8-37.6 154.6-22.7 212.1-7.6 57.2 15.1 111.7 28.8 203.9-11.1V200c-43.6 17.3-80.2 24.1-112.1 24.1-37.4 0-68.9-8.3-100-16.5zm9.5-125.9c51.8 15.6 97.4 29 202.6-20.1V30.8c0-25.1-26.8-38.1-49.4-26.6C291.3 91.5 305.4-62.2 96 32.4v151.9c94.8-37.5 154.6-22.7 212.1-7.6 57.2 15 111.7 28.7 203.9-11.1V96.7c-53.6 23.5-93.3 31.4-126.1 31.4s-59-7.8-85.7-15.9c-4-1.2-8.1-2.4-12.1-3.5V75.5c7.2 2 14.3 4.1 21.3 6.2zM160 128.1c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16-7.2 16-16 16zm0-55.8c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm64 47.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm0-55.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16z"></path></svg>
-				<span>Nationwide</span>
-			</h5>
+		<div class="location-dot location-dot__europe">
+			<div class="location-dot__content">
+				<div class="tw-inline-block">
+					<h5 class="tw-text-gray-100"><strong>Ticon Ag</strong></h5>
+					<p class="tw-text-gray-100">
+						Soorpark <br />SH-9696 Bütschwil, Switzerland
+					</p>
+					<p class="tw-text-gray-100 tw-mb-0">P: +41 71 983 0075</p>
+					<p class="tw-text-gray-100">F: +41 71 983 0076</p>
+					<a href="http://www.ticongmbh.ch/en/home/" target="_blank" title="Ticon Ag">www.ticongmbh.ch</a>
+				</div>
+
+				<div class="tw-inline-block tw-ml-3">
+					<h5 class="tw-text-gray-100">
+						<strong>Zipper-Technik, GmbH</strong>
+					</h5>
+					<p class="tw-text-gray-100">
+						Wernher-von-Braun-Straße 3 <br />63263 Neu-Isenburg, Germany
+					</p>
+					<p class="tw-text-gray-100 tw-mb-0">P: +49 6102 73870</p>
+					<p class="tw-text-gray-100">F: +49 6102 34034</p>
+					<a href="http://www.zipper-technik.de/" target="_blank" title="Zipper-Technik">www.zipper-technik.de</a>
+				</div>
+			</div>
 		</div>
-		<div class="distributor col-md-3">
-			<p><img src="https://via.placeholder.com/200x50?text=Areospace-Defense" alt="Areospace & Defense"></p>
-			<h5>Phone: (540) 389-6565</h5>
-			<h5>Toll Free: 1 (800) 609-8186</h5>
-			<h5>
-				<svg data-v-13569f93="" class="svg-inline--fa fa-globe fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="globe" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"></path></svg>
-				<span>Worldwide</span>
-			</h5>
+		<div class="location-dot location-dot__china">
+			<div class="location-dot__content">
+				<h5 class="tw-text-gray-100"><strong>ZT-Ren</strong></h5>
+				<p class="tw-text-gray-100">
+					East First Floor #1 Building <br />
+					No. 6 Jin Xing Road <br />Zhuhai City <br />Guangdong Province, P.R.
+					China
+				</p>
+				<p class="tw-text-gray-100 tw-mb-0">P: 0086-756-3621377</p>
+				<p class="tw-text-gray-100">F: 0086-756-3621277</p>
+				<a href="http://www.zt-ren.com/" target="_blank" title="ZT-Ren">www.zt-ren.com</a>
+			</div>
 		</div>
-		<div class="distributor col-md-3">
-			<p><img src="https://via.placeholder.com/200x50?text=Compass" alt="Compass"></p>
-			<h5>Phone: (540) 389-6565</h5>
-			<h5>Toll Free: 1 (800) 609-8186</h5>
-			<h5>
-				<svg class="svg-inline--fa fa-flag-usa fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="flag-usa" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M32 0C14.3 0 0 14.3 0 32v464c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V32C64 14.3 49.7 0 32 0zm267.9 303.6c-57.2-15.1-111.7-28.8-203.9 11.1V384c185.7-92.2 221.7 53.3 397.5-23.1 11.4-5 18.5-16.5 18.5-28.8v-36c-43.6 17.3-80.2 24.1-112.1 24.1-37.4-.1-68.9-8.4-100-16.6zm0-96c-57.2-15.1-111.7-28.8-203.9 11.1v61.5c94.8-37.6 154.6-22.7 212.1-7.6 57.2 15.1 111.7 28.8 203.9-11.1V200c-43.6 17.3-80.2 24.1-112.1 24.1-37.4 0-68.9-8.3-100-16.5zm9.5-125.9c51.8 15.6 97.4 29 202.6-20.1V30.8c0-25.1-26.8-38.1-49.4-26.6C291.3 91.5 305.4-62.2 96 32.4v151.9c94.8-37.5 154.6-22.7 212.1-7.6 57.2 15 111.7 28.7 203.9-11.1V96.7c-53.6 23.5-93.3 31.4-126.1 31.4s-59-7.8-85.7-15.9c-4-1.2-8.1-2.4-12.1-3.5V75.5c7.2 2 14.3 4.1 21.3 6.2zM160 128.1c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16-7.2 16-16 16zm0-55.8c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm64 47.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm0-55.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16z"></path></svg>
-				<span>CA | NM | OR</span>
-			</h5>
-		</div>
-		<div class="distributor col-md-3">
-			<p><img src="https://via.placeholder.com/200x50?text=Whitmore-wirenerics" alt="Whitmore-wirenerics"></p>
-			<h5>Phone: (540) 389-6565</h5>
-			<h5>Toll Free: 1 (800) 609-8186</h5>
-			<h5>
-				<svg class="svg-inline--fa fa-flag-usa fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="flag-usa" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M32 0C14.3 0 0 14.3 0 32v464c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V32C64 14.3 49.7 0 32 0zm267.9 303.6c-57.2-15.1-111.7-28.8-203.9 11.1V384c185.7-92.2 221.7 53.3 397.5-23.1 11.4-5 18.5-16.5 18.5-28.8v-36c-43.6 17.3-80.2 24.1-112.1 24.1-37.4-.1-68.9-8.4-100-16.6zm0-96c-57.2-15.1-111.7-28.8-203.9 11.1v61.5c94.8-37.6 154.6-22.7 212.1-7.6 57.2 15.1 111.7 28.8 203.9-11.1V200c-43.6 17.3-80.2 24.1-112.1 24.1-37.4 0-68.9-8.3-100-16.5zm9.5-125.9c51.8 15.6 97.4 29 202.6-20.1V30.8c0-25.1-26.8-38.1-49.4-26.6C291.3 91.5 305.4-62.2 96 32.4v151.9c94.8-37.5 154.6-22.7 212.1-7.6 57.2 15 111.7 28.7 203.9-11.1V96.7c-53.6 23.5-93.3 31.4-126.1 31.4s-59-7.8-85.7-15.9c-4-1.2-8.1-2.4-12.1-3.5V75.5c7.2 2 14.3 4.1 21.3 6.2zM160 128.1c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16-7.2 16-16 16zm0-55.8c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm64 47.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm0-55.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16z"></path></svg>
-				<span>Nationwide</span>
-			</h5>
-		</div>
-		<div class="distributor col-md-3">
-			<p><img src="https://via.placeholder.com/200x50?text=Sherburn" alt="Sherburn"></p>
-			<h5>Phone: (540) 389-6565</h5>
-			<h5>Toll Free: 1 (800) 609-8186</h5>
-			<h5>
-				<svg class="svg-inline--fa fa-flag-usa fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="flag-usa" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M32 0C14.3 0 0 14.3 0 32v464c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V32C64 14.3 49.7 0 32 0zm267.9 303.6c-57.2-15.1-111.7-28.8-203.9 11.1V384c185.7-92.2 221.7 53.3 397.5-23.1 11.4-5 18.5-16.5 18.5-28.8v-36c-43.6 17.3-80.2 24.1-112.1 24.1-37.4-.1-68.9-8.4-100-16.6zm0-96c-57.2-15.1-111.7-28.8-203.9 11.1v61.5c94.8-37.6 154.6-22.7 212.1-7.6 57.2 15.1 111.7 28.8 203.9-11.1V200c-43.6 17.3-80.2 24.1-112.1 24.1-37.4 0-68.9-8.3-100-16.5zm9.5-125.9c51.8 15.6 97.4 29 202.6-20.1V30.8c0-25.1-26.8-38.1-49.4-26.6C291.3 91.5 305.4-62.2 96 32.4v151.9c94.8-37.5 154.6-22.7 212.1-7.6 57.2 15 111.7 28.7 203.9-11.1V96.7c-53.6 23.5-93.3 31.4-126.1 31.4s-59-7.8-85.7-15.9c-4-1.2-8.1-2.4-12.1-3.5V75.5c7.2 2 14.3 4.1 21.3 6.2zM160 128.1c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16-7.2 16-16 16zm0-55.8c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm64 47.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm0-55.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16z"></path></svg>
-				<span>Nationwide</span>
-			</h5>
-		</div>
-		<div class="distributor col-md-3">
-			<p><img src="https://via.placeholder.com/200x50?text=Lapp Tannehill" alt="Lapp Tannehill"></p>
-			<h5>Phone: (540) 389-6565</h5>
-			<h5>Toll Free: 1 (800) 609-8186</h5>
-			<h5>
-				<svg class="svg-inline--fa fa-flag-usa fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="flag-usa" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M32 0C14.3 0 0 14.3 0 32v464c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V32C64 14.3 49.7 0 32 0zm267.9 303.6c-57.2-15.1-111.7-28.8-203.9 11.1V384c185.7-92.2 221.7 53.3 397.5-23.1 11.4-5 18.5-16.5 18.5-28.8v-36c-43.6 17.3-80.2 24.1-112.1 24.1-37.4-.1-68.9-8.4-100-16.6zm0-96c-57.2-15.1-111.7-28.8-203.9 11.1v61.5c94.8-37.6 154.6-22.7 212.1-7.6 57.2 15.1 111.7 28.8 203.9-11.1V200c-43.6 17.3-80.2 24.1-112.1 24.1-37.4 0-68.9-8.3-100-16.5zm9.5-125.9c51.8 15.6 97.4 29 202.6-20.1V30.8c0-25.1-26.8-38.1-49.4-26.6C291.3 91.5 305.4-62.2 96 32.4v151.9c94.8-37.5 154.6-22.7 212.1-7.6 57.2 15 111.7 28.7 203.9-11.1V96.7c-53.6 23.5-93.3 31.4-126.1 31.4s-59-7.8-85.7-15.9c-4-1.2-8.1-2.4-12.1-3.5V75.5c7.2 2 14.3 4.1 21.3 6.2zM160 128.1c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16-7.2 16-16 16zm0-55.8c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm64 47.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm0-55.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16z"></path></svg>
-				<span>GA | MN | NV | TX</span>
-			</h5>
-		</div>
-		<div class="distributor col-md-3">
-			<p><img src="https://via.placeholder.com/200x50?text=Strancoproducts" alt="Strancoproducts"></p>
-			<h5>Phone: (540) 389-6565</h5>
-			<h5>Toll Free: 1 (800) 609-8186</h5>
-			<h5>
-				<svg class="svg-inline--fa fa-flag-usa fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="flag-usa" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M32 0C14.3 0 0 14.3 0 32v464c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V32C64 14.3 49.7 0 32 0zm267.9 303.6c-57.2-15.1-111.7-28.8-203.9 11.1V384c185.7-92.2 221.7 53.3 397.5-23.1 11.4-5 18.5-16.5 18.5-28.8v-36c-43.6 17.3-80.2 24.1-112.1 24.1-37.4-.1-68.9-8.4-100-16.6zm0-96c-57.2-15.1-111.7-28.8-203.9 11.1v61.5c94.8-37.6 154.6-22.7 212.1-7.6 57.2 15.1 111.7 28.8 203.9-11.1V200c-43.6 17.3-80.2 24.1-112.1 24.1-37.4 0-68.9-8.3-100-16.5zm9.5-125.9c51.8 15.6 97.4 29 202.6-20.1V30.8c0-25.1-26.8-38.1-49.4-26.6C291.3 91.5 305.4-62.2 96 32.4v151.9c94.8-37.5 154.6-22.7 212.1-7.6 57.2 15 111.7 28.7 203.9-11.1V96.7c-53.6 23.5-93.3 31.4-126.1 31.4s-59-7.8-85.7-15.9c-4-1.2-8.1-2.4-12.1-3.5V75.5c7.2 2 14.3 4.1 21.3 6.2zM160 128.1c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16-7.2 16-16 16zm0-55.8c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm64 47.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm0-55.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16z"></path></svg>
-				<span>IL</span>
-			</h5>
-		</div>
-		<div class="distributor col-md-3">
-			<p><img src="https://via.placeholder.com/200x50?text=McMaster-Carr" alt="McMaster-Carr"></p>
-			<h5>Phone: (540) 389-6565</h5>
-			<h5>Toll Free: 1 (800) 609-8186</h5>
-			<h5>
-				<svg class="svg-inline--fa fa-flag-usa fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="flag-usa" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M32 0C14.3 0 0 14.3 0 32v464c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V32C64 14.3 49.7 0 32 0zm267.9 303.6c-57.2-15.1-111.7-28.8-203.9 11.1V384c185.7-92.2 221.7 53.3 397.5-23.1 11.4-5 18.5-16.5 18.5-28.8v-36c-43.6 17.3-80.2 24.1-112.1 24.1-37.4-.1-68.9-8.4-100-16.6zm0-96c-57.2-15.1-111.7-28.8-203.9 11.1v61.5c94.8-37.6 154.6-22.7 212.1-7.6 57.2 15.1 111.7 28.8 203.9-11.1V200c-43.6 17.3-80.2 24.1-112.1 24.1-37.4 0-68.9-8.3-100-16.5zm9.5-125.9c51.8 15.6 97.4 29 202.6-20.1V30.8c0-25.1-26.8-38.1-49.4-26.6C291.3 91.5 305.4-62.2 96 32.4v151.9c94.8-37.5 154.6-22.7 212.1-7.6 57.2 15 111.7 28.7 203.9-11.1V96.7c-53.6 23.5-93.3 31.4-126.1 31.4s-59-7.8-85.7-15.9c-4-1.2-8.1-2.4-12.1-3.5V75.5c7.2 2 14.3 4.1 21.3 6.2zM160 128.1c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16-7.2 16-16 16zm0-55.8c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm64 47.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm0-55.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16z"></path></svg>
-				<span>Nationwide</span>
-			</h5>
+		<div class="location-dot location-dot__japan">
+			<div class="location-dot__content">
+				<h5 class="tw-text-gray-100">
+					<strong>Zippertubing (Japan) LTD</strong>
+				</h5>
+				<p class="tw-text-gray-100">
+					3-2-56 Takatsukadai <br />Nishiku, Kobe <br />651-2271 Japan
+				</p>
+				<p class="tw-text-gray-100 tw-mb-0">P: 81 6 6341 9545</p>
+				<p class="tw-text-gray-100">F: 81 6 6341 8445</p>
+				<a href="http://www.ztj.co.jp/" target="_blank" title="Zippertubing (Japan)">www.ztj.co.jp</a>
+			</div>
 		</div>
 	</div>
-</div>
+	<div class="main_ofiice">
+		<div class="col-md-7 text-center">
+			<img src="https://zt-logos.s3.us-west-1.amazonaws.com/zippertubing/zt-blue-nopadding.svg" alt="">			
+		</div>
+		<div class="col-md-5">
+			<div class="hq_address">
+				<h4 class="text-center">HEADQUARTERS</h4>
+				<div class="col-md-6">7150 W. Erie St.</div>
+				<div class="col-md-6">P: (480) 285-3990</div>
+				<div class="col-md-6">Chandler, AZ 85226</div>
+				<div class="col-md-6">F: (480) 285-3997</div>
+				<p class="text-center">www.zippertubing.com</p>
+			</div>
+		</div>
+	</div>
+	<hr style="display: block !important; border: 4px solid #f8f8f9;">
+	<div class="foc_list container">
+		<div class="row col-display-table">
+			<div class="col-md-4 text-center">
+				<p><img src="https://zt-logos.s3.us-west-1.amazonaws.com/family-of-companies/zt-labels-logo.png" alt="ZT Lables"></p>
+				<h4>ZT Labels</h4>
+				<p>2122 W. 5th Place<br>Tempe, AZ 85281<br>(480) 966-2999<br>(480) 285-4625</p><p><a href="">www.ztlabels.com</a></p>
+			</div>
+			<div class="col-md-4 text-center">
+				<p><img src="https://zt-logos.s3.us-west-1.amazonaws.com/family-of-companies/techlite-logo.png" alt="Techlite"></p>
+				<h4>Techlite Insulation
+				</h4>
+				<p>2122 W. 5th Place<br>Tempe, AZ 85281<br>P: (480) 967-8888<br>F: (480) 894-6255</p><p><a href="">www.techlite.com</a></p>
+			</div>
+			<div class="col-md-4 text-center">
+				<p><img src="https://zt-logos.s3.us-west-1.amazonaws.com/family-of-companies/ticon-logo.png" alt="Ticon GMBH"></p>
+				<h4>Ticon GmbH</h4>
+				<p>Soorpark<br>CH-9696 Bütschwil, Switzerland<br>P: +41 71 983 0075<br>F: +41 71 983 0076</p><p><a href="">www.ticongmbh.ch</a></p>
+			</div>
+			<div class="col-md-4 text-center">
+				<p><img src="https://zt-logos.s3.us-west-1.amazonaws.com/family-of-companies/zipper-technik-logo.png" alt="Zipper Technik"></p>
+				<h4>Zipper-Technik, GmbH</h4>
+				<p>Wernher-von-Braun-Straße 3<br>63263 Neu-Isenburg, Germany<br>P: +49 6102 73870<br>F: +49 6102 34034</p><p><a href="">www.zipper-technik.de</a></p>
+			</div>
+			<div class="col-md-4 text-center">
+				<p><img src="https://zt-logos.s3.us-west-1.amazonaws.com/family-of-companies/zt-ren-logo.png" alt="ZT Ren"></p>
+				<h4>ZT-Ren</h4>
+				<p>East First Floor #1 Building<br>No. 6 Jin Xing Road<br>Zhuhai City<br>Guangdong Province, P.R. China<br>P: 0086-756-3621377<br>F: 0086-756-3621277</p><p><a href="">www.zt-ren.com</a></p>
+			</div>
+			<div class="col-md-4 text-center">
+				<p><img src="https://zt-logos.s3.us-west-1.amazonaws.com/family-of-companies/ztj-logo.png" alt="ZT-J"></p>
+				<h4>Zippertubing (Japan) LTD.</h4>
+				<p>3-2-56 Takatsukadai<br>Nishiku, Kobe<br>651-2271 Japan<br>P: 81 6 6341 9545<br>F: 81 6 6341 8445</p><p><a href="">www.ztj.co.jp</a></p>
+			</div>
+		</div>
+	</div>
 
+</div>
