@@ -6,21 +6,20 @@
 <style type="text/css">
   
 	.about_us_wrap .row {
-        max-width: 1500px;
-    	margin: 0 auto;
+    margin: 0 auto;
 	}
 	.about_us_wrap .col_6 {
-    position: relative;
-    padding: 8em 3em;
-    margin: 1em;
-    max-width: 26em;
-    background: #f8f8f9;
+		position: relative;
+		padding: 8em 3em;
+		margin: 1em;
+		max-width: 26em;
+		background: #f8f8f9;
 		height: 30em;
 	}
 	.about_us_wrap .col_6 span {
 		position: absolute;
-  	top: -5em;
-  	left: 27%;
+		top: -5em;
+		left: 27%;
 	}
 	.about_us_wrap .col-section {
 		text-align: center;
@@ -305,6 +304,9 @@
     flex-direction: column;
     max-width: 700px;
     position: relative;
+		height: 75vh;
+		overflow-x: hidden;
+    overflow-y: auto;
   }
   .timeline__content-title {
     font-weight: normal;
@@ -343,9 +345,11 @@
     display: flex;
     position: relative;
     transform: translateY(-80px);
-    margin-top: 20em;
-		margin-bottom: 20em;
+    {% comment %} margin-top: 20em;
+		margin-bottom: 20em; {% endcomment %}
   }
+	.timeline__content {
+	}
   .timeline-item:before {
     /* content: attr(data-text); */
     letter-spacing: 3px;
