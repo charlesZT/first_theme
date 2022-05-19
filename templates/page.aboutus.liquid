@@ -31,6 +31,7 @@
 	}
 	.about_us_wrap p.title {
 		color: #005cb8;
+		margin-top: 0;
 	}
 	.about_us_wrap .twentytwenty-wrapper .col-md-4 {
 		padding-left: 0;
@@ -83,14 +84,15 @@
 	  display: flex;
 	  align-items: center;
 	  justify-content: left;
-	  width: 1500px;
+	  width: 100%;
+	  max-width: 1200px;
 	  height: 400px;
 	  position: relative;
 	  top: 0;
 	  bottom: 0;
 	  left: 0;
 	  right: 0;
-	  margin: auto;
+	  margin: 0 auto 6em;
 	  background-color: #fff;
 	  overflow: hidden;
 	}
@@ -197,7 +199,7 @@
 	#scene #left-zone .list li.item input[type=radio] ~ .content {
 	  position: absolute;
 	  left: 30%;
-	  top: -400px;
+	  top: -500px;
 	  width: 60%;
 	  height: 400px;
 	  -webkit-animation-duration: 0.75s;
@@ -212,50 +214,33 @@
 	  /*flex-direction: column;*/
 	}
 	#scene #left-zone .list li.item input[type=radio] ~ .content span.right {
-		width: 50%;
+		width: 40%;
 	}
-	#scene #left-zone .list li.item input[type=radio] ~ .content.content_scott .picto {
-	  height: 25em;
-	  width: 25em;
-	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Scott_Y.png");
-	  background-position: center;
-	  background-size: cover;
-	  background-repeat: no-repeat;
+	#scene #left-zone .list li.item input[type=radio] ~ .content .picto {
+		height: 30em;
+		width: 30em;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin: 3em;
 	}
 	#scene #left-zone .list li.item input[type=radio] ~ .content h1 {
 	  color: #434345;
 	}
+	#scene #left-zone .list li.item input[type=radio] ~ .content.content_scott .picto {
+	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Scott_Y.png");
+	}
 	#scene #left-zone .list li.item input[type=radio] ~ .content.content_matt .picto {
-	  height: 25em;
-	  width: 25em;
 	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Matt_H.png");
-	  background-position: center;
-	  background-size: cover;
-	  background-repeat: no-repeat;
 	}
 	#scene #left-zone .list li.item input[type=radio] ~ .content.content_jonathan .picto {
-	  height: 25em;
-	  width: 25em;
 	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Jonathan_S.png");
-	  background-position: center;
-	  background-size: cover;
-	  background-repeat: no-repeat;
 	}
 	#scene #left-zone .list li.item input[type=radio] ~ .content.content_madison .picto {
-	  height: 25em;
-	  width: 25em;
 	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Madison_L.png");
-	  background-position: center;
-	  background-size: cover;
-	  background-repeat: no-repeat;
 	}
 	#scene #left-zone .list li.item input[type=radio] ~ .content.content_taylor .picto {
-	  height: 25em;
-	  width: 25em;
 	  background-image: url("https://zt-s3-pages.s3.us-west-1.amazonaws.com/engineers/es-Taylor_B.png");
-	  background-position: center;
-	  background-size: cover;
-	  background-repeat: no-repeat;
 	}
 	#scene #left-zone .list li.item input[type=radio] ~ .content h1:first-letter {
 	  text-transform: uppercase;
@@ -304,8 +289,8 @@
     flex-direction: column;
     max-width: 700px;
     position: relative;
-		height: 75vh;
-		overflow-x: hidden;
+	height: 75vh;
+	overflow-x: hidden;
     overflow-y: auto;
   }
   .timeline__content-title {
@@ -460,7 +445,7 @@
 
 <div class="about_us_wrap">
 
-	<div class="row">
+	<div class="row container">
 	  <div class="col-md-7">
 	    <p>Zippertubing® is a manufacturer of EMI shielding, specialized heat shrink, cable bundling, heat shielding, and marine fairing solutions. From re-enterable wraparound to pull-through jacketing, and from snap button to continuous zipper closures, we have solutions to meet the needs of a wide range of industries and application requirements. Whether it is a cable bundling solution that will be installed on a robot or an EMI shielding solution that will be used on a spacecraft, Zippertubing® will create a solution for you. No longer will you have to sacrifice your expectations or requirements to the solution. Instead, the solution will be customized to you.</p>
 	  </div>
@@ -522,18 +507,18 @@
 	  	<p>Zippertubing® engineers will assist you in installation and testing whether it be on-site or via video conference to ensure proper installation and that product features are working as per your expectations.</p>
 	  </div>
 	</div>
-	<div class="row col-section">
+	<div class="row container col-section">
 		<h4>Customer Service Team</h4>
 		<p>Our customer service team is readily available to help you with all of your product questions, needs and orders.<br>They will also advise if a standard product or a custom-engineered solution will best address your component challenge.</p>
 	</div>
-	<div class="row">
+	<div class="row container">
 	  <div class="col-md-4">
-	  	<div>
+	  	<div class="text-center">
 	  		<img src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/Kyle_B.png">
 	  	</div>
 	  	<div>
-	  		<h4>Kyle B</h4>
-	  		<p class="title">Sals Manager</p>
+	  		<h4 class="text-center">Kyle B</h4>
+	  		<p class="title text-center">Sals Manager</p>
 	  	</div>
 	  	<div>
 	  		<div>Zippertubing® Experience: 6 years</div>
@@ -541,12 +526,12 @@
 	  	</div>
 	  </div>
 	  <div class="col-md-4">
-	  	<div>
+	  	<div class="text-center">
 	  		<img src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/Suzy_K.png">
 	  	</div>
 	  	<div>
-	  		<h4>Suzy K</h4>
-	  		<p class="title">Customer Support Specialist</p>
+	  		<h4 class="text-center">Suzy K</h4>
+	  		<p class="title text-center">Customer Support Specialist</p>
 	  	</div>
 	  	<div>
 	  		<div>Zippertubing® Experience: 4 years</div>
@@ -554,12 +539,12 @@
 	  	</div>
 	  </div>
 	  <div class="col-md-4">
-	  	<div>
+	  	<div class="text-center">
 	  		<img src="https://zt-s3-pages.s3.us-west-1.amazonaws.com/About-Us/Missie_M.png">
 	  	</div>
 	  	<div>
-	  		<h4>Missie ,</h4>
-	  		<p class="title">Customer Support Specialist</p>
+	  		<h4 class="text-center">Missie</h4>
+	  		<p class="title text-center">Customer Support Specialist</p>
 	  	</div>
 	  	<div>
 	  		<div>Zippertubing® Experience: 7 years</div>
@@ -567,7 +552,7 @@
 	  	</div>
 	  </div>
 	</div>
-	<div class="row col-section">
+	<div class="row container col-section">
 		<h4>Engineering Team</h4>
 		<p>The collective expertise of our in-house engineering team can provide you with endless ways to solve your component issues and create a solution — everything from conceptualizing to final product.</p>
 	</div>
@@ -581,9 +566,9 @@
 	          <label class="label_scott" for="eng_team_1"><span>Scott Yee</span></label>
 	          <div class="content content_scott"><span class="picto"></span>
 	          	<span class="right">
-		            <h1>Scott Yee</h1>
-		            <p class="title">Engineer Manager</p>
-		            <p>Scott earned his Bachelors of Science in Aerospace Engineering from Arizona State University in Tempe, AZ. He has experience in systems program management, aerospace systems, optical components, optical systems, semiconductor processing equipment, testing and R&D product development. Scott is currently responsible for overseeing design concepts, new product development and improvement of existing product lines.</p>
+		            <h1 class="text-center">Scott Yee</h1>
+		            <p class="title text-center">Engineer Manager</p>
+		            <p class="text-left">Scott earned his Bachelors of Science in Aerospace Engineering from Arizona State University in Tempe, AZ. He has experience in systems program management, aerospace systems, optical components, optical systems, semiconductor processing equipment, testing and R&D product development. Scott is currently responsible for overseeing design concepts, new product development and improvement of existing product lines.</p>
 		          </span>
 	          </div>
 	        </li>
@@ -592,9 +577,9 @@
 	          <label class="label_matt" for="eng_team_2"><span>Matt Hesselbacher</span></label>
 	          <div class="content content_matt"><span class="picto"></span>
 	          	<span class="right">
-		            <h1>Matt Hesselbacher</h1>
-		            <p class="title">Principal Engineer</p>
-		            <p>Matt earned his Bachelors of Science in Electrical Engineering from the University of Arizona in Tucson, AZ. He has many years of experience in the aerospace industry designing electrical subsystems and cable harnesses for missiles and satellite launch systems. Matt is currently responsible for product training, EMI shielding design, new product development, and legacy product support.</p>
+		            <h1 class="text-center">Matt Hesselbacher</h1>
+		            <p class="title text-center">Principal Engineer</p>
+		            <p class="text-left">Matt earned his Bachelors of Science in Electrical Engineering from the University of Arizona in Tucson, AZ. He has many years of experience in the aerospace industry designing electrical subsystems and cable harnesses for missiles and satellite launch systems. Matt is currently responsible for product training, EMI shielding design, new product development, and legacy product support.</p>
 		          </span>
 	          </div>
 	        </li>
@@ -603,9 +588,9 @@
 	          <label class="label_jonathan" for="eng_team_3"><span>Jonathan Speirs</span></label>
 	          <div class="content content_jonathan"><span class="picto"></span>
 	          	<span class="right">
-		            <h1>Jonathan Speirs</h1>
-		            <p class="title">Senior Production Engineer</p>
-		            <p>Jonathan earned his Bachelors of Science in Manufacturing Engineering Technology from Brigham Young University in Provo, UT. He has experience designing products, fixtures, gauges, and other manufacturing aids to ensure streamlined processing of material through each phase of production. Jonathan is currently involved in new product development, manufacturing support, and automotive tooling & fixture design.</p>
+		            <h1 class="text-center">Jonathan Speirs</h1>
+		            <p class="title text-center">Senior Production Engineer</p>
+		            <p class="text-left">Jonathan earned his Bachelors of Science in Manufacturing Engineering Technology from Brigham Young University in Provo, UT. He has experience designing products, fixtures, gauges, and other manufacturing aids to ensure streamlined processing of material through each phase of production. Jonathan is currently involved in new product development, manufacturing support, and automotive tooling & fixture design.</p>
 		          </span>
 	          </div>
 	        </li>
@@ -614,9 +599,9 @@
 	          <label class="label_madison" for="eng_team_4"><span>Madison Lenschow</span></label>
 	          <div class="content content_madison"><span class="picto"></span>
 	          	<span class="right">
-		            <h1>Madison Lenschow</h1>
-		            <p class="title">Design Engineer</p>
-		            <p>Madison earned her Bachelors of Science in Mechanical Engineering from Northern Arizona University in Flagstaff, AZ. She has experience developing and testing mobility systems and prototype electro-mechanical systems. Madison is responsible for new product development, field support for product installations, and general product training.</p>
+		            <h1 class="text-center">Madison Lenschow</h1>
+		            <p class="title text-center">Design Engineer</p>
+		            <p class="text-left">Madison earned her Bachelors of Science in Mechanical Engineering from Northern Arizona University in Flagstaff, AZ. She has experience developing and testing mobility systems and prototype electro-mechanical systems. Madison is responsible for new product development, field support for product installations, and general product training.</p>
 		          </div>
 		        </span>
 	        </li>
@@ -625,9 +610,9 @@
 	          <label class="label_taylor" for="eng_team_5"><span>Taylor Black</span></label>
 	          <div class="content content_taylor"><span class="picto"></span>
 	          	<span class="right">
-		            <h1>Taylor Black</h1>
-		            <p class="title">Material Engineer</p>
-		            <p>Taylor earned his Bachelors of Science in Polymer Science & Engineering from Case Western Reserve University in Cleveland, OH. He has experience developing various material compounds and optimizing their performance characteristics by adjusting process parameters and incorporating additives. Taylor is responsible for new product and materials testing as well as material and process refinement based on industry specific requirements.</p>
+		            <h1 class="text-center">Taylor Black</h1>
+		            <p class="title text-center">Material Engineer</p>
+		            <p class="text-left">Taylor earned his Bachelors of Science in Polymer Science & Engineering from Case Western Reserve University in Cleveland, OH. He has experience developing various material compounds and optimizing their performance characteristics by adjusting process parameters and incorporating additives. Taylor is responsible for new product and materials testing as well as material and process refinement based on industry specific requirements.</p>
 		          </span>
 	          </div>
 	        </li>
@@ -638,7 +623,7 @@
 	  </div>
 	</div>
 
-	<div class="row">
+	<div>
 
 		<div class="timeline-container" id="timeline-1">
 			<div class="timeline">
