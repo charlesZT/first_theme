@@ -1,67 +1,95 @@
 <style>
 
 	.testimonials_wrap {
-			box-sizing: border-box;
-	  }
-	  
-	  .flex-container {
-			display: flex;
-			flex-direction: row;
-			text-align: center;
-	  }
-	  
-	  .flex-container img {
-			width: 100%;
-			height: 100%;
-	  }
-	  
-	  .flex-item-left {
-			padding: 10px;
-			flex: 50%;
-			margin: 0;
-			padding: 0;
-	  }
-	  
-	  .flex-item-right {
-			padding: 10px;
-			flex: 50%;
-			margin: 0;
-			padding: 0;
-	  }
+		box-sizing: border-box;
+	}
+	
+	.testimonials_wrap .flex-container {
+		display: flex;
+		flex-direction: row;
+		text-align: center;
+	}
+	
+	.testimonials_wrap .flex-container .img_col {
+		background-repeat: no-repeat;
+    background-size: cover;
+	}
+	
+	.testimonials_wrap .flex-container .img_col p {
+		margin: 10% auto;
+    padding: 5%;
+	}
+	
+	.testimonials_wrap .flex-container img {
+		width: 100%;
+		height: 100%;
+	}
+	
+	.testimonials_wrap .flex-item-left,
+	.testimonials_wrap .flex-item-right {
+		padding: 10px;
+		flex: 50%;
+		margin: 0;
+		padding: 0;
+	}
 
-		.testimonials_wrap .content {
-			position: relative;
+	.testimonials_wrap .content {
+		position: relative;
+	}
+
+	.testimonials_wrap .content:before {
+		content: "“";
+		position: absolute;
+		font-size: 194px;
+		line-height: 0;
+		color: #b3cfea;
+		top: 50px;
+		left: -70px;
+	}
+
+	.testimonials_wrap .text_col {
+		padding: 2em 8em;
+	}
+
+	.testimonials_wrap .text-uppercase {
+		text-transform: uppercase;
+	}
+
+	.testimonials_wrap .text-center,
+	.testimonials_wrap .what_customer_saying {
+		text-align: center;
+	}
+
+	.testimonials_wrap .text-left {
+		text-align: left;
+	}
+
+	.testimonials_wrap .content {
+		text-align: left;
+	}
+
+	.testimonials_wrap .what_customer_saying {
+		padding: 6em;
+		background: #f8f8f9;
+	}
+
+	@media (max-width: 800px) {
+
+		.testimonials_wrap .flex-container {
+			flex-direction: column;
+		}
+		
+		.testimonials_wrap #flex { 
+			display: flex; 
+			flex-direction: column;
 		}
 
-		.testimonials_wrap .content:before {
-			content: "“";
-			position: absolute;
-			font-size: 194px;
-			line-height: 0;
-			color: #b3cfea;
-			top: 50px;
-			left: -60px;
+		#flex > #a { order: 2; }
+		#flex > #b { order: 1; }
+		#flex > #c { order: 3; }
+		#flex > #d { order: 4; }
 
-		.testimonials_wrap .text_col {
-			padding: 1em 6em;
-		}
-
-	  @media (max-width: 800px) {
-
-			.flex-container {
-				flex-direction: column;
-			}
-			
-			#flex { 
-				display: flex; 
-				flex-direction: column;
-			}
-			#flex > #a { order: 2; }
-			#flex > #b { order: 1; }
-			#flex > #c { order: 3; }
-			#flex > #d { order: 4; }
-
-	  }
+	}
 
 </style>
 
@@ -70,65 +98,62 @@
 	<div class="flex-container" id="flex">
 	  <div class="flex-item-left text_col" id="a">
 			<h2 class="text-center text-uppercase">Miller Edge, Inc.</h2>
-			<p class="content">I engaged Zippertubing on a development project after careful review of their online products and capabilities. Matt and his team met with me and provided hands-on review and technical details of existing products and their impressive library of material samples. They offer robust protective coverings made from natural and synthetic fabrics, metal and polymer foils and films and a huge assortment of engineered structures developed for specific functions such as puncture and abrasion resistance, EMI shielding and more. We talked about our product performance demands and cost considerations. We also reviewed conceptual design details about our vision of the finished product. Just a week later Matt called me back for another meeting where I was shown actual proof of concept assemblies as well as functional prototypes. It took a few more iterations to iron out details, but the Zippertubing engineering and sales experts were able to develop timely and cost effective protective covering solutions to our demanding performance requirements. 10 out of 10.</p>
-			<p><u>Kelly Hedegard<br>Tempe Branch Manager</u></p>
+			<p class="content">I engaged Zippertubing&reg; on a development project after careful review of their online products and capabilities. Matt and his team met with me and provided hands-on review and technical details of existing products and their impressive library of material samples. They offer robust protective coverings made from natural and synthetic fabrics, metal and polymer foils and films and a huge assortment of engineered structures developed for specific functions such as puncture and abrasion resistance, EMI shielding and more. We talked about our product performance demands and cost considerations. We also reviewed conceptual design details about our vision of the finished product. Just a week later Matt called me back for another meeting where I was shown actual proof of concept assemblies as well as functional prototypes. It took a few more iterations to iron out details, but the Zippertubing&reg; engineering and sales experts were able to develop timely and cost effective protective covering solutions to our demanding performance requirements. 10 out of 10.</p>
+			<p class="text-left"><u>Kelly Hedegard<br>Tempe Branch Manager</u></p>
 		</div>
-	  <div class="flex-item-right" id="b">
-		  <img src="https://via.placeholder.com/1000"/>
+	  <div class="flex-item-right img_col" id="b" style="background-image: url('https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/bkgrd_MillerEdge.jpg')";">
+			<p><img src="https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/MillerEdge.png"></p>
 	  </div>
 	</div>
 	<div class="flex-container" id="flex">
-	  <div class="flex-item-left" id="c">
-		  <img src="https://via.placeholder.com/1000"/>
+	  <div class="flex-item-left img_col" id="c" style="background-image: url('https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/bkgrd_Gecko_Robotics.jpg')";">
+		  <p><img src="https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/GeckoRobotics.png"></p>
 	  </div>
 	  <div class="flex-item-right text_col" id="d">
 			<h2 class="text-center text-uppercase">GeckoRobotics</h2>
-			<p class="content">The Zippertubing team was able to quickly turnaround a request for a custom jacketing system which met our specifications. The team was knowledgeable about their products, capabilities and materials which made the process simple and worthwhile.</p>
-			<p><u>Michael Binger<br>Mechanical Engineer II</u></p>
+			<p class="content">The Zippertubing&reg; team was able to quickly turnaround a request for a custom jacketing system which met our specifications. The team was knowledgeable about their products, capabilities and materials which made the process simple and worthwhile.</p>
+			<p class="text-left"><u>Michael Binger<br>Mechanical Engineer II</u></p>
 		</div>
 	</div>
 
 	<div class="flex-container" id="flex">
 	  <div class="flex-item-left text_col" id="a">
-			<h2 class="text-center text-uppercase">Miller Edge, Inc.</h2>
-			<p class="content">I engaged Zippertubing on a development project after careful review of their online products and capabilities. Matt and his team met with me and provided hands-on review and technical details of existing products and their impressive library of material samples. They offer robust protective coverings made from natural and synthetic fabrics, metal and polymer foils and films and a huge assortment of engineered structures developed for specific functions such as puncture and abrasion resistance, EMI shielding and more. We talked about our product performance demands and cost considerations. We also reviewed conceptual design details about our vision of the finished product. Just a week later Matt called me back for another meeting where I was shown actual proof of concept assemblies as well as functional prototypes. It took a few more iterations to iron out details, but the Zippertubing engineering and sales experts were able to develop timely and cost effective protective covering solutions to our demanding performance requirements. 10 out of 10.</p>
-			<p><u>Kelly Hedegard<br>Tempe Branch Manager</u></p>
+			<h2 class="text-center text-uppercase">Global Aerospace</h2>
+			<p class="content">We recently worked with Zippertubing&reg; on the design of a submerged fuel hose system for the Navy. Zippertubing&reg; was responsible for the design and fabrication of engineering model hardware that we used for mechanical property testing. In addition, they designed and fabricated 450 feet of prototype hardware that was delivered to the Navy for eventual ocean testing. We were impressed with the creativity and expertise of the design and production engineers and Zippertubing&reg;’s willingness to go the extra mile. We would highly recommend Zippertubing&reg; to other companies seeking innovative solutions to challenging problems.</p>
+			<p class="text-left"><u>Kerry T. Nock<br>President</u></p>
 		</div>
-	  <div class="flex-item-right" id="b">
-		  <img src="https://via.placeholder.com/1000"/>
+	  <div class="flex-item-right img_col" id="b" style="background-image: url('https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/bkgrd_Global_Aerospace.jpg')";">
+			<p><img src="https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/Global_Aerospace.png"></p>
 	  </div>
 	</div>
 	<div class="flex-container" id="flex">
-	  <div class="flex-item-left" id="c">
-		  <img src="https://via.placeholder.com/1000"/>
+	  <div class="flex-item-left img_col" id="c" style="background-image: url('https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/bkgrd_Magneticomm.jpg')";">
+		  <p><img src="https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/Magneticomm.png"></p>
 	  </div>
 	  <div class="flex-item-right text_col" id="d">
-			<h2 class="text-center text-uppercase">GeckoRobotics</h2>
-			<p class="content">The Zippertubing team was able to quickly turnaround a request for a custom jacketing system which met our specifications. The team was knowledgeable about their products, capabilities and materials which made the process simple and worthwhile.</p>
-			<p><u>Michael Binger<br>Mechanical Engineer II</u></p>
+			<h2 class="text-center text-uppercase">Magneticomm</h2>
+			<p class="content">The Zippertubing&reg; Company sales engineer was very responsive and was interested in finding the correct solutions to our problems. The Zippertubing&reg; Company got us samples quickly and helped us make a decision on our needs in short order.</p>
+			<p class="text-left"><u>Greg Trook<br>Magneticomm</u></p>
 		</div>
 	</div>
 
 	<div class="flex-container" id="flex">
-	  <div class="flex-item-left" id="a">
-			<h2 class="text-center text-uppercase">Miller Edge, Inc.</h2>
-			<p class="content">I engaged Zippertubing on a development project after careful review of their online products and capabilities. Matt and his team met with me and provided hands-on review and technical details of existing products and their impressive library of material samples. They offer robust protective coverings made from natural and synthetic fabrics, metal and polymer foils and films and a huge assortment of engineered structures developed for specific functions such as puncture and abrasion resistance, EMI shielding and more. We talked about our product performance demands and cost considerations. We also reviewed conceptual design details about our vision of the finished product. Just a week later Matt called me back for another meeting where I was shown actual proof of concept assemblies as well as functional prototypes. It took a few more iterations to iron out details, but the Zippertubing engineering and sales experts were able to develop timely and cost effective protective covering solutions to our demanding performance requirements. 10 out of 10.</p>
-			<p><u>Kelly Hedegard<br>Tempe Branch Manager</u></p>
+	  <div class="flex-item-left text_col" id="a">
+			<h2 class="text-center text-uppercase">LECO</h2>
+			<p class="content">Working with the Engineering group at Zippertubing&reg; to create a custom solution to a RF shielding problem was a great experience. From the initial consultation to the final product, communication and prototype delivery were above my expectations and ultimately produced a terrific production solution for our company.</p>
+			<p class="text-left"><u>Tim Judkins<br>Product Engineer</u></p>
 		</div>
-	  <div class="flex-item-right" id="b">
-		  <img src="https://via.placeholder.com/1000"/>
+	  <div class="flex-item-right img_col" id="b" style="background-image: url('https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/bkgrd_Leco.jpg')";">
+			<p><img src="https://zt-s3-gallery.s3-us-west-1.amazonaws.com/testimonials/Leco.png"></p>
 	  </div>
 	</div>
-	<div class="flex-container" id="flex">
-	  <div class="flex-item-left" id="c">
-		  <img src="https://via.placeholder.com/1000"/>
-	  </div>
-	  <div class="flex-item-right" id="d">
-			<h2 class="text-center text-uppercase">GeckoRobotics</h2>
-			<p class="content">The Zippertubing team was able to quickly turnaround a request for a custom jacketing system which met our specifications. The team was knowledgeable about their products, capabilities and materials which made the process simple and worthwhile.</p>
-			<p><u>Michael Binger<br>Mechanical Engineer II</u></p>
-		</div>
+
+	<div class="what_customer_saying">
+		<h2>WHAT OUR CUSTOMERS ARE SAYING</h2>
+		<p>Zippertubing&reg; has manufactured solutions for customers with both common and unique component challenges.<br>Read on to learn more about how our products and services exceeded their expectations.</p>
+		<p>custom form</p>
 	</div>
+
 
 </div>
 
