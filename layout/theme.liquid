@@ -268,7 +268,8 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
   {% render 'spurit_sct_theme_snippet' %}
-</body>
+{% render 'quantity-breaks-now', customer: customer, template: template, product: product, cart: cart %}
+        </body>
 </html>
 
 {% include 'globo.menu.script' %}
