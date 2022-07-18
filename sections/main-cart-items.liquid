@@ -290,10 +290,14 @@
     </div>
 
 
-<p class="cart-attribute__field">
-  <label for="shipping-account-number">Shipping Account Number</label>
-  <input id="shipping-account-number" type="text" name="attributes[Shipping Account Number]" value="{{ cart.attributes["Shipping Account Number"] }}">
-</p>
+    <div class="cart-attribute__field">
+      <label for="shipping-account-number">Shipping Account Number</label>
+      <input id="shipping-account-number" type="text" name="attributes[Shipping Account Number]" value="{{ cart.attributes["Shipping Account Number"] }}">
+      <label for="carrier">Carrier</label>
+      <input id="carrier" type="text" name="attributes[carrier]" value="{{ cart.attributes["carrier"] }}">
+      <label for="preferred-shipping-method">Preferred Shipping Method</label>
+      <input id="preferred-shipping-method" type="text" name="attributes[Preferred Shipping Method]" value="{{ cart.attributes["Preferred Shipping Method"] }}">
+    </div>
                           
     <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
     <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
