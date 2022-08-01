@@ -1,0 +1,74 @@
+<style media="print" type="text/css">
+
+  .print {
+    //display: none;
+    border: 1px solid;
+  }
+
+  .print .main_header {
+    border: 1px solid;
+    background: #414042 !important;
+    text-align: center;
+  }
+  
+  .print section {
+    border: 1px solid;
+    height: 10in;
+  }
+
+  .print .page_1 .product_info div {
+    display: inline-block;
+  }
+
+  @media print {
+    
+    .print {
+      display: block;
+      margin: 0;
+      margin: 1.6cm;
+    }
+
+  }
+  
+</style>
+
+<div class="print">
+
+  <section class="page_1">
+
+    <div class="main_header">
+      <img src="https://cdn.shopify.com/s/files/1/0628/2398/9498/files/ZT-Zippertubing-Horizontal-Stack-White_7f3567e6-50a9-4052-b30e-537aeff7043c.png?v=1656271999">
+    </div>
+    <div class="product_info">
+      <div class="product_image">
+        <img src="{{ media | img_url: '800x' }}" alt="{{ media.alt | escape }}">
+      </div>
+      <div class="product_title_desc">
+      </div>
+    </div>
+    <div class="thumb_nails">
+      4 images here
+    </div>
+    <div class="features_bebefits">
+      <div class="features">
+        <p>Features</p>
+        <p>asdf</p>
+      </div>
+      <div class="benefits">
+        <p>Benefits</p>
+        <p>asdf</p>
+      </div>
+    </div>
+    <div class="footer">
+      ZT name
+    </div>
+
+  </section>
+  <section class="page_2">
+  </section>
+  <section class="page_3">
+  </section>
+
+</div>
+
+
