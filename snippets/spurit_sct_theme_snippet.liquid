@@ -9,11 +9,23 @@
     Spurit.CountdownTimer.snippet = {};
   }
   Spurit.CountdownTimer.snippet.shopHash = 'de10b079eec8453f71bafdc09354d248';
-  Spurit.CountdownTimer.snippet.cacheTimestamp = 1646953296;
+  Spurit.CountdownTimer.snippet.signature = 'ab2668159cc6b755ed2fd6edefd5cf95';
+  Spurit.CountdownTimer.snippet.userId = '359154';
+  Spurit.CountdownTimer.snippet.cacheTimestamp = 1677575303;
 
   {% assign page = template | split: '.' | first %}
   {% if page == 'product' and product and product.id %}
     Spurit.CountdownTimer.snippet.productId = {{ product.id }};
+
+    var variantStock = {};
+    {% for variant in product.variants %}
+        variantStock[{{- variant.id -}}] = {
+          id: {{ variant.id }},
+          inventory_quantity: {{ variant.inventory_quantity }},
+        };
+    {% endfor %}
+    Spurit.CountdownTimer.snippet.variants = Object.values(variantStock);
+
   {% endif %}
   {% if page == 'collection' and collection and collection.id %}
   Spurit.CountdownTimer.snippet.collectionId = {{ collection.id }};
