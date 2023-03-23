@@ -482,6 +482,19 @@
     </div>
   </div>
 
+
+--------------------------------
+
+
+    {% for variant in product.variants %}
+      {{variant | json}}
+    {% endfor %}
+
+
+                      
+
+
+                      
 <!-- Begin Recently Viewed Products -->
 
 {{ Shopify.products }}
