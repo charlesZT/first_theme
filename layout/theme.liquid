@@ -214,7 +214,7 @@
     </script>
   
 {{ 'scqb-tmp-2017210342.js' | asset_url | script_tag }}
-</head>
+{% if content_for_header contains 'bss-b2b-customer-portal' %}{% render "bss-bcp-header" %}{% endif %}</head>
 
   <body class="gradient">
 
@@ -269,7 +269,7 @@
     {%- endif -%}
   {% render 'spurit_sct_theme_snippet' %}
 {% render 'quantity-breaks-now', customer: customer, template: template, product: product, cart: cart %}
-        </body>
+        {% if content_for_header contains 'bss-b2b-customer-portal' %}{% render "bss-b2b-share-cart" %}{% endif %}{% if content_for_header contains 'bss-b2b-customer-portal' %}{% render "bss-bcp-js" %}{% endif %}</body>
 </html>
 
 {% include 'globo.menu.script' %}
