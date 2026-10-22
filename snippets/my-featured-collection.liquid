@@ -25,8 +25,18 @@
   <div class="grid-uniform">
     {% for product in collections[handle].products limit: total_products %}
       <div class="grid__item {{grid_item_width}}">
-        {% include 'product-grid-item' with featured: product %}
+        {% include 'product-grid-item' with featured, featured: product %}
       </div>
     {% endfor %}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% include 'product-grid-item' with featured: product %}"
+  to: "{% include 'product-grid-item' with featured, featured: product %}"
+  position: 939..1005
+{% endcomment %}

@@ -69,4 +69,14 @@
   </div>
 </div>
 
-{% include 'my-featured-collection' with handle: 'best-sellers' %}
+{% include 'my-featured-collection' with handle, handle: 'best-sellers' %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% include 'my-featured-collection' with handle: 'best-sellers' %}"
+  to: "{% include 'my-featured-collection' with handle, handle: 'best-sellers' %}"
+  position: 2325..2399
+{% endcomment %}
